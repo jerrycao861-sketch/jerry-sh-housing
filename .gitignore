@@ -1,0 +1,7 @@
+cloudflared
+cloudflared.tgz
+*.log
+data/tunnel_url*
+.DS_Store
+__pycache__
+*.pyc

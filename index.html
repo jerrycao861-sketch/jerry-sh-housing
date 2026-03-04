@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>上海房市日报 - 2026年03月02日</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+    background: #0f1923;
+    color: #e8edf3;
+    min-height: 100vh;
+    padding: 0 0 40px 0;
+}
+.header {
+    background: linear-gradient(135deg, #0d4f3c 0%, #1a3a2a 50%, #0f2318 100%);
+    padding: 30px 20px 25px;
+    text-align: center;
+    border-bottom: 2px solid #00ff8840;
+    position: relative;
+    overflow: hidden;
+}
+.header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,255,136,0.05) 0%, transparent 60%);
+    animation: pulse 4s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.1); } }
+.header h1 {
+    font-size: 26px;
+    color: #00ff88;
+    text-shadow: 0 0 20px rgba(0,255,136,0.4);
+    position: relative;
+    margin-bottom: 6px;
+}
+.header .date {
+    font-size: 15px;
+    color: #88ccaa;
+    position: relative;
+}
+.header .badge {
+    display: inline-block;
+    background: rgba(0,255,136,0.15);
+    border: 1px solid #00ff8860;
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 12px;
+    color: #00ff88;
+    margin-top: 10px;
+    position: relative;
+}
+.container { max-width: 800px; margin: 0 auto; padding: 20px 16px; }
+.section {
+    background: #1a2634;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    border: 1px solid #2a3a4a;
+}
+.section h2 {
+    font-size: 18px;
+    color: #00ff88;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #2a3a4a;
+}
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+@media(min-width:600px) { .card-grid { grid-template-columns: repeat(4, 1fr); } }
+.stat-card {
+    background: linear-gradient(145deg, #1e3040 0%, #162430 100%);
+    border-radius: 14px;
+    padding: 18px 16px;
+    text-align: center;
+    border: 1px solid #2a4050;
+    transition: transform 0.2s;
+}
+.stat-card:hover { transform: translateY(-2px); }
+.stat-card.green { border-color: #00ff8840; background: linear-gradient(145deg, #0d3025 0%, #0a2018 100%); }
+.stat-card.orange { border-color: #ff980040; background: linear-gradient(145deg, #302010 0%, #201508 100%); }
+.stat-card.blue { border-color: #4488ff40; background: linear-gradient(145deg, #102040 0%, #081530 100%); }
+.stat-card.red { border-color: #ff444440; background: linear-gradient(145deg, #301515 0%, #200a0a 100%); }
+.stat-card.purple { border-color: #aa66ff40; background: linear-gradient(145deg, #201040 0%, #150830 100%); }
+.stat-label { font-size: 12px; color: #88aacc; margin-bottom: 8px; }
+.stat-value { font-size: 24px; font-weight: 700; color: #00ff88; }
+.stat-card.orange .stat-value { color: #ffaa44; }
+.stat-card.blue .stat-value { color: #66aaff; }
+.stat-card.red .stat-value { color: #ff6666; }
+.stat-card.purple .stat-value { color: #bb88ff; }
+.stat-sub { font-size: 11px; color: #66aa88; margin-top: 4px; }
+.heat-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #162430;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 16px;
+    border: 1px solid #2a3a4a;
+}
+.heat-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ff5722;
+    box-shadow: 0 0 12px #ff572280;
+    animation: blink 1.5s ease-in-out infinite;
+}
+@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.5; } }
+.heat-text { font-size: 15px; font-weight: 600; }
+.heat-desc { font-size: 12px; color: #88aacc; margin-left: auto; }
+.chart-container {
+    background: #162430;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 16px;
+    border: 1px solid #2a3a4a;
+    position: relative;
+    height: 220px;
+}
+.chart-title { font-size: 13px; color: #88aacc; margin-bottom: 12px; }
+.bar-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 160px;
+    padding: 0 10px;
+}
+.bar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    max-width: 80px;
+}
+.bar {
+    width: 36px;
+    background: linear-gradient(180deg, #00ff88 0%, #00aa55 100%);
+    border-radius: 6px 6px 0 0;
+    transition: height 0.8s ease;
+    position: relative;
+    min-height: 4px;
+}
+.bar-label {
+    font-size: 11px;
+    color: #88aacc;
+    margin-top: 8px;
+    white-space: nowrap;
+}
+.bar-value {
+    font-size: 11px;
+    color: #00ff88;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+th {
+    background: #162430;
+    color: #88aacc;
+    padding: 12px 8px;
+    text-align: center;
+    font-weight: 500;
+    border-bottom: 2px solid #2a4050;
+    white-space: nowrap;
+}
+td {
+    padding: 12px 8px;
+    text-align: center;
+    border-bottom: 1px solid #1e3040;
+    white-space: nowrap;
+}
+tr:hover { background: #1e303f; }
+td.volume { color: #00ff88; font-weight: 700; }
+.focus-tag {
+    display: inline-block;
+    background: rgba(0,255,136,0.1);
+    border: 1px solid #00ff8840;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 13px;
+    margin: 4px;
+    color: #aaddbb;
+}
+.focus-tag strong { color: #00ff88; }
+.tips {
+    background: linear-gradient(135deg, #1a3028 0%, #162430 100%);
+    border-left: 3px solid #00ff88;
+    padding: 16px 20px;
+    border-radius: 0 12px 12px 0;
+    margin-top: 16px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #aaccbb;
+}
+.tips strong { color: #00ff88; }
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #556677;
+    font-size: 12px;
+}
+.monthly-section {
+    border: 1px solid #aa66ff40;
+    background: linear-gradient(145deg, #1a1a34 0%, #1a2634 100%);
+}
+.monthly-section h2 { color: #bb88ff; }
+.monthly-detail {
+    margin-top: 16px;
+    padding: 14px 18px;
+    background: #162030;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #aabbcc;
+}
+.monthly-detail strong { color: #bb88ff; }
+.update-time {
+    text-align: right;
+    font-size: 11px;
+    color: #556677;
+    margin-top: 8px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>上海房市日报</h1>
+    <div class="date">2026年03月02日 周一</div>
+    <div class="badge">300-500万区间专项追踪</div>
+</div>
+
+<div class="container">
+
+    <!-- 核心指标 -->
+    <div class="section">
+        <h2>📈 昨日核心数据</h2>
+        <div class="card-grid">
+            <div class="stat-card green">
+                <div class="stat-label">二手房成交</div>
+                <div class="stat-value">587</div>
+                <div class="stat-sub">套</div>
+            </div>
+            <div class="stat-card orange">
+                <div class="stat-label">新房成交</div>
+                <div class="stat-value">280</div>
+                <div class="stat-sub">套</div>
+            </div>
+            <div class="stat-card blue">
+                <div class="stat-label">成交均价</div>
+                <div class="stat-value">44,800</div>
+                <div class="stat-sub">元/㎡ 📉 小幅下跌</div>
+            </div>
+            <div class="stat-card red">
+                <div class="stat-label">挂牌均价</div>
+                <div class="stat-value">58,057</div>
+                <div class="stat-sub">元/㎡</div>
+            </div>
+        </div>
+
+        <div class="heat-bar">
+            <div class="heat-indicator"></div>
+            <span class="heat-text">🔥🔥 正常偏热</span>
+            <span class="heat-desc">300-500万占比 33.5%</span>
+        </div>
+        <div class="update-time">更新时间：2026-03-02 09:53:45</div>
+    </div>
+
+    
+    <div class="section monthly-section">
+        <h2>📊 月度总结（2026年03月）</h2>
+        <div class="card-grid">
+            <div class="stat-card purple">
+                <div class="stat-label">月总成交</div>
+                <div class="stat-value">587套</div>
+            </div>
+            <div class="stat-card purple">
+                <div class="stat-label">日均成交</div>
+                <div class="stat-value">587套</div>
+            </div>
+            <div class="stat-card purple">
+                <div class="stat-label">月均价</div>
+                <div class="stat-value">44,800元/㎡</div>
+            </div>
+            <div class="stat-card purple">
+                <div class="stat-label">记录天数</div>
+                <div class="stat-value">1天</div>
+            </div>
+        </div>
+        <div class="monthly-detail">
+            <p>最高单日成交：<strong>587套</strong> | 最低单日成交：<strong>587套</strong></p>
+            <p>月均挂牌价：<strong>58,057元/㎡</strong></p>
+        </div>
+    </div>
+    
+
+    <!-- 7日趋势 -->
+    <div class="section">
+        <h2>📊 近7日成交趋势</h2>
+        <div class="chart-container">
+            <div class="chart-title">二手房日成交量（套）</div>
+            <div class="bar-chart">
+                
+                <div class="bar-item">
+                    <div class="bar-value">587</div>
+                    <div class="bar" style="height:140px"></div>
+                    <div class="bar-label">03-02</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 历史记录 -->
+    <div class="section">
+        <h2>📋 近7日明细</h2>
+        <div style="overflow-x:auto;">
+        <table>
+            <thead>
+                <tr>
+                    <th>日期</th>
+                    <th>二手房</th>
+                    <th>新房</th>
+                    <th>成交均价</th>
+                    <th>挂牌均价</th>
+                    <th>价格趋势</th>
+                    <th>热度</th>
+                </tr>
+            </thead>
+            <tbody>
+        <tr>
+            <td>2026-03-02</td>
+            <td class="volume">587</td>
+            <td>280</td>
+            <td>44,800</td>
+            <td>58,057</td>
+            <td>📉 小幅下跌</td>
+            <td>🔥🔥</td>
+        </tr></tbody>
+        </table>
+        </div>
+    </div>
+
+    <!-- 300-500万专项 -->
+    <div class="section">
+        <h2>🏠 300-500万区间关注</h2>
+        <div style="display:flex; flex-wrap:wrap; gap:4px; margin-bottom:16px;">
+            <span class="focus-tag">松江泗泾 <strong>300-400万</strong></span>
+            <span class="focus-tag">宝山顾村 <strong>350-450万</strong></span>
+            <span class="focus-tag">青浦徐泾 <strong>400-500万</strong></span>
+            <span class="focus-tag">闵行浦江 <strong>350-450万</strong></span>
+            <span class="focus-tag">嘉定南翔 <strong>380-480万</strong></span>
+        </div>
+        <div class="tips">
+            <strong>今日提示：</strong>沪七条新政持续发酵，非沪籍购房门槛降低，公积金贷款额度提升至240万，300-500万刚需买家直接受益。建议关注地铁沿线次新房源，议价空间正在收窄。
+        </div>
+    </div>
+
+    <!-- 周度对比 -->
+    <div class="section">
+        <h2>📅 周度对比</h2>
+        <div class="card-grid">
+            <div class="stat-card green">
+                <div class="stat-label">本周日均</div>
+                <div class="stat-value">587</div>
+                <div class="stat-sub">套/日</div>
+            </div>
+            <div class="stat-card blue">
+                <div class="stat-label">记录天数</div>
+                <div class="stat-value">1</div>
+                <div class="stat-sub">天</div>
+            </div>
+            <div class="stat-card orange">
+                <div class="stat-label">最高成交</div>
+                <div class="stat-value">587</div>
+                <div class="stat-sub">套</div>
+            </div>
+            <div class="stat-card red">
+                <div class="stat-label">最低成交</div>
+                <div class="stat-value">587</div>
+                <div class="stat-sub">套</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>上海房市追踪系统 · 300-500万区间专项</p>
+    <p>数据来源：网上房地产、中原地产、链家研究院</p>
+    <p>每日 9:30 自动更新 · 2026年03月02日</p>
+</div>
+
+</body>
+</html>
