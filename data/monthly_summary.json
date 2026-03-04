@@ -1,10 +1,10 @@
 {
   "month": "2026年03月",
-  "total_volume": 587,
-  "avg_daily_volume": 587,
-  "avg_price": 44800,
-  "avg_list_price": 58057,
-  "days_recorded": 1,
-  "max_volume": 587,
+  "total_volume": 1212,
+  "avg_daily_volume": 606,
+  "avg_price": 44769,
+  "avg_list_price": 58032,
+  "days_recorded": 2,
+  "max_volume": 625,
   "min_volume": 587
 }

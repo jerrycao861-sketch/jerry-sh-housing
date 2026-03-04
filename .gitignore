@@ -4,4 +4,4 @@ cloudflared.tgz
 data/tunnel_url*
 .DS_Store
 __pycache__
-*.pyc
+*.pyc.github_token

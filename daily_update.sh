@@ -665,94 +665,54 @@ if ! lsof -i :$PORT > /dev/null 2>&1; then
 fi
 
 # ============================================================
-# 5. 管理 Cloudflare Tunnel（保持隧道存活，避免域名变化）
+# 5. 部署到 GitHub Pages（固定域名）
 # ============================================================
-CLOUDFLARED="$WORK_DIR/cloudflared"
-TUNNEL_LOG="$WORK_DIR/tunnel.log"
-TUNNEL_URL_FILE="$WORK_DIR/data/tunnel_url.txt"
 DOMAIN="jerry-sh-housing.ccwu.cc"
+REPO="jerrycao861-sketch/jerry-sh-housing"
 
-# 检查隧道是否仍在运行
-TUNNEL_ALIVE="false"
-if pgrep -f "cloudflared tunnel" > /dev/null 2>&1; then
-    # 隧道进程存在，检查是否还能正常工作
-    OLD_URL=$(cat "$TUNNEL_URL_FILE" 2>/dev/null || echo "")
-    if [ -n "$OLD_URL" ]; then
-        HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$OLD_URL" 2>/dev/null || echo "000")
-        if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "301" ] || [ "$HTTP_CODE" = "302" ]; then
-            TUNNEL_ALIVE="true"
-            TUNNEL_URL="$OLD_URL"
-            echo "[$(date '+%Y-%m-%d %H:%M:%S')] 隧道仍在运行: $TUNNEL_URL" >> "$LOG_FILE"
-        fi
-    fi
+# 从环境变量或文件读取 GitHub Token
+if [ -f "$WORK_DIR/.github_token" ]; then
+    GITHUB_TOKEN=$(cat "$WORK_DIR/.github_token" 2>/dev/null)
+else
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] ⚠️ GitHub Token 文件不存在" >> "$LOG_FILE"
+    GITHUB_TOKEN=""
 fi
 
-# 如果隧道已断开，重新启动
-if [ "$TUNNEL_ALIVE" = "false" ] && [ -f "$CLOUDFLARED" ]; then
-    pkill -f "cloudflared tunnel" 2>/dev/null
-    sleep 2
-    
-    nohup "$CLOUDFLARED" tunnel --url http://localhost:$PORT > "$TUNNEL_LOG" 2>&1 &
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] 重新启动 Cloudflare Tunnel..." >> "$LOG_FILE"
-    
-    # 等待隧道建立并提取公网URL
-    TUNNEL_URL=""
-    for i in $(seq 1 15); do
-        sleep 2
-        TUNNEL_URL=$(grep -o 'https://[a-zA-Z0-9\-]*\.trycloudflare\.com' "$TUNNEL_LOG" 2>/dev/null | head -1)
-        if [ -n "$TUNNEL_URL" ]; then
-            break
-        fi
-    done
-    
-    if [ -n "$TUNNEL_URL" ]; then
-        echo "$TUNNEL_URL" > "$TUNNEL_URL_FILE"
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] 新隧道链接: $TUNNEL_URL" >> "$LOG_FILE"
-        
-        # 检查隧道地址是否变化，如果变了需要更新DNSHE
-        OLD_URL=$(cat "$TUNNEL_URL_FILE.prev" 2>/dev/null || echo "")
-        if [ "$TUNNEL_URL" != "$OLD_URL" ]; then
-            echo "[$(date '+%Y-%m-%d %H:%M:%S')] ⚠️ 隧道地址已变更！" >> "$LOG_FILE"
-            echo "[$(date '+%Y-%m-%d %H:%M:%S')] 旧地址: $OLD_URL" >> "$LOG_FILE"
-            echo "[$(date '+%Y-%m-%d %H:%M:%S')] 新地址: $TUNNEL_URL" >> "$LOG_FILE"
-            
-            # 提取新的 CNAME 目标（去掉 https://）
-            NEW_CNAME=$(echo "$TUNNEL_URL" | sed 's|https://||')
-            
-            # 发送通知提醒手动更新 DNSHE
-            osascript -e "display notification \"隧道地址已变更，请更新 DNSHE CNAME 记录：
-旧: $OLD_URL
-新: $TUNNEL_URL
-域名: $DOMAIN → $NEW_CNAME\" with title \"⚠️ 域名需要更新\" subtitle \"DNSHE CNAME 记录需手动更新\""
-            
-            echo "$TUNNEL_URL" > "$TUNNEL_URL_FILE.prev"
-        fi
+# 提交并推送更新到 GitHub
+cd "$WORK_DIR"
+git add -A
+git commit -m "Auto update: $TODAY - Daily housing data" >> "$LOG_FILE" 2>&1 || true
+
+if [ -n "$GITHUB_TOKEN" ]; then
+    git push https://${GITHUB_TOKEN}@github.com/${REPO}.git main >> "$LOG_FILE" 2>&1
+    if [ $? -eq 0 ]; then
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] ✅ GitHub Pages 部署成功" >> "$LOG_FILE"
     else
-        TUNNEL_URL="http://localhost:$PORT"
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] 隧道未就绪，使用本地链接" >> "$LOG_FILE"
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] ⚠️ GitHub 推送失败" >> "$LOG_FILE"
     fi
-elif [ ! -f "$CLOUDFLARED" ]; then
-    TUNNEL_URL="http://localhost:$PORT"
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] cloudflared 未安装，使用本地链接" >> "$LOG_FILE"
+else
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] ⚠️ 跳过 GitHub 推送（无 Token）" >> "$LOG_FILE"
 fi
 
-# 保存当前URL用于下次对比
-echo "$TUNNEL_URL" > "$TUNNEL_URL_FILE.prev"
+if [ $? -eq 0 ]; then
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] ✅ GitHub Pages 部署成功" >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] 网站地址: http://${DOMAIN}" >> "$LOG_FILE"
+else
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] ⚠️ GitHub 推送失败" >> "$LOG_FILE"
+fi
 
 # ============================================================
-# 6. 发送系统通知（含固定域名 + 隧道链接）
+# 6. 发送系统通知（含固定域名）
 # ============================================================
 VOLUME=$(python3 -c "import json; d=json.load(open('$DATA_DIR/latest.json')); print(d['volume'])")
 HEAT=$(python3 -c "import json; d=json.load(open('$DATA_DIR/latest.json')); print(d['heat'])")
 
 osascript -e "display notification \"昨日二手房成交 ${VOLUME} 套 | ${HEAT}
-🌐 http://${DOMAIN}
-📡 ${TUNNEL_URL}\" with title \"📊 上海房市日报\" subtitle \"${TODAY_CN} ${WEEKDAY} · 300-500万追踪\""
+🌐 http://${DOMAIN}\" with title \"📊 上海房市日报\" subtitle \"${TODAY_CN} ${WEEKDAY} · 300-500万追踪\""
 
-# 同时打开浏览器（优先用固定域名）
+# 同时打开浏览器
 open "http://${DOMAIN}"
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] 通知已发送，更新完成 ✅" >> "$LOG_FILE"
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] 固定域名: http://${DOMAIN}" >> "$LOG_FILE"
-echo "[$(date '+%Y-%m-%d %H:%M:%S')] 隧道链接: $TUNNEL_URL" >> "$LOG_FILE"
 echo "---" >> "$LOG_FILE"
