@@ -227,6 +227,149 @@ td.volume { color: #00ff88; font-weight: 700; }
     color: #aabbcc;
 }
 .monthly-detail strong { color: #bb88ff; }
+
+/* 热门小区样式 */
+.community-section {
+    border: 1px solid #00ff8840;
+    background: linear-gradient(145deg, #0f1f1a 0%, #0a1512 100%);
+}
+.community-section h2 { color: #00ff88; }
+.community-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+@media (max-width: 768px) {
+    .community-grid { grid-template-columns: 1fr; }
+}
+.community-card {
+    background: linear-gradient(145deg, #1a2a25 0%, #15201a 100%);
+    border: 1px solid #00ff8830;
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+.community-card:hover {
+    border-color: #00ff8860;
+    box-shadow: 0 8px 32px rgba(0,255,136,0.1);
+}
+.community-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #00ff8820;
+}
+.community-header h3 {
+    color: #00ff88;
+    font-size: 18px;
+    font-weight: 600;
+}
+.community-tag {
+    background: rgba(0,255,136,0.15);
+    color: #00ff88;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+.community-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+.img-box {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+}
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.img-box:hover img {
+    transform: scale(1.05);
+}
+.img-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: #fff;
+    padding: 8px 10px;
+    font-size: 11px;
+}
+.community-info {
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 14px;
+}
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid #00ff8810;
+}
+.info-row:last-child { border-bottom: none; }
+.info-label {
+    color: #88aa99;
+    font-size: 13px;
+}
+.info-value {
+    color: #ccddcc;
+    font-size: 13px;
+    font-weight: 500;
+}
+.info-value.highlight {
+    color: #00ff88;
+    font-weight: 600;
+}
+.community-advantages {
+    background: rgba(0,255,136,0.05);
+    border-left: 3px solid #00ff88;
+    padding: 12px 14px;
+    border-radius: 0 10px 10px 0;
+    margin-bottom: 14px;
+}
+.community-advantages strong {
+    color: #00ff88;
+    font-size: 13px;
+    display: block;
+    margin-bottom: 8px;
+}
+.community-advantages ul {
+    margin: 0;
+    padding-left: 16px;
+    color: #aaccbb;
+    font-size: 12px;
+    line-height: 1.8;
+}
+.community-advantages li {
+    margin-bottom: 4px;
+}
+.community-transaction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(0,255,136,0.1) 0%, transparent 100%);
+    padding: 10px 14px;
+    border-radius: 8px;
+}
+.trans-label {
+    color: #88aa99;
+    font-size: 12px;
+}
+.trans-value {
+    color: #ffaa44;
+    font-size: 14px;
+    font-weight: 600;
+}
 .update-time {
     text-align: right;
     font-size: 11px;
@@ -407,6 +550,210 @@ td.volume { color: #00ff88; font-weight: 700; }
                 <div class="stat-label">最低成交</div>
                 <div class="stat-value">587</div>
                 <div class="stat-sub">套</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 热门小区 -->
+    <div class="section community-section">
+        <h2>🏘️ 热门小区推荐</h2>
+        <p style="color:#88aabb; font-size:12px; margin-bottom:16px;">300-500万区间 · 3月成交活跃小区</p>
+        
+        <div class="community-grid">
+            <!-- 小区1: 金地自在城 -->
+            <div class="community-card">
+                <div class="community-header">
+                    <h3>金地自在城</h3>
+                    <span class="community-tag">松江·泗泾</span>
+                </div>
+                <div class="community-images">
+                    <div class="img-box">
+                        <img src="images/jindi_inside.jpg" alt="小区内部">
+                        <span class="img-label">小区环境</span>
+                    </div>
+                    <div class="img-box">
+                        <img src="images/jindi_outside.jpg" alt="周边配套">
+                        <span class="img-label">周边景观</span>
+                    </div>
+                </div>
+                <div class="community-info">
+                    <div class="info-row">
+                        <span class="info-label">参考均价</span>
+                        <span class="info-value">35,000元/㎡</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">主力户型</span>
+                        <span class="info-value">89-120㎡ 2-3房</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">总价区间</span>
+                        <span class="info-value highlight">310-420万</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">地铁</span>
+                        <span class="info-value">9号线泗泾站 800米</span>
+                    </div>
+                </div>
+                <div class="community-advantages">
+                    <strong>核心优势：</strong>
+                    <ul>
+                        <li>金地品牌开发商，品质保障</li>
+                        <li>9号线直达徐家汇，通勤便利</li>
+                        <li>小区绿化率高，环境宜居</li>
+                        <li>周边商业配套成熟（三湘商业广场）</li>
+                    </ul>
+                </div>
+                <div class="community-transaction">
+                    <span class="trans-label">3月成交</span>
+                    <span class="trans-value">28套 🔥🔥🔥</span>
+                </div>
+            </div>
+            
+            <!-- 小区2: 上海康城 -->
+            <div class="community-card">
+                <div class="community-header">
+                    <h3>上海康城</h3>
+                    <span class="community-tag">闵行·莘庄</span>
+                </div>
+                <div class="community-images">
+                    <div class="img-box">
+                        <img src="images/kangcheng_inside.jpg" alt="小区内部">
+                        <span class="img-label">小区环境</span>
+                    </div>
+                    <div class="img-box">
+                        <img src="images/kangcheng_outside.jpg" alt="周边配套">
+                        <span class="img-label">周边道路</span>
+                    </div>
+                </div>
+                <div class="community-info">
+                    <div class="info-row">
+                        <span class="info-label">参考均价</span>
+                        <span class="info-value">32,800元/㎡</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">主力户型</span>
+                        <span class="info-value">101-138㎡ 2-3房</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">总价区间</span>
+                        <span class="info-value highlight">330-450万</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">地铁</span>
+                        <span class="info-value">12号线西延线（在建）</span>
+                    </div>
+                </div>
+                <div class="community-advantages">
+                    <strong>核心优势：</strong>
+                    <ul>
+                        <li>超大型社区，配套自给自足</li>
+                        <li>22000㎡人造海景、沙滩景观</li>
+                        <li>康城实验学校（九年一贯制）</li>
+                        <li>社区巴士直达莘庄地铁站</li>
+                    </ul>
+                </div>
+                <div class="community-transaction">
+                    <span class="trans-label">3月成交</span>
+                    <span class="trans-value">45套 🔥🔥🔥🔥</span>
+                </div>
+            </div>
+            
+            <!-- 小区3: 保利西子湾 -->
+            <div class="community-card">
+                <div class="community-header">
+                    <h3>保利西子湾</h3>
+                    <span class="community-tag">松江·大学城</span>
+                </div>
+                <div class="community-images">
+                    <div class="img-box">
+                        <img src="images/baoli_inside.jpg" alt="小区内部">
+                        <span class="img-label">小区环境</span>
+                    </div>
+                    <div class="img-box">
+                        <img src="images/baoli_outside.jpg" alt="周边配套">
+                        <span class="img-label">建筑外观</span>
+                    </div>
+                </div>
+                <div class="community-info">
+                    <div class="info-row">
+                        <span class="info-label">参考均价</span>
+                        <span class="info-value">47,600元/㎡</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">主力户型</span>
+                        <span class="info-value">89-140㎡ 2-4房</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">总价区间</span>
+                        <span class="info-value highlight">420-680万</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">地铁</span>
+                        <span class="info-value">9号线松江大学城站 400米</span>
+                    </div>
+                </div>
+                <div class="community-advantages">
+                    <strong>核心优势：</strong>
+                    <ul>
+                        <li>央企保利开发，品质标杆</li>
+                        <li>9号线正地铁房，通勤首选</li>
+                        <li>大学城核心，人文氛围浓厚</li>
+                        <li>步行300米即达万达广场</li>
+                    </ul>
+                </div>
+                <div class="community-transaction">
+                    <span class="trans-label">3月成交</span>
+                    <span class="trans-value">22套 🔥🔥</span>
+                </div>
+            </div>
+            
+            <!-- 小区4: 绿洲康城亲水湾 -->
+            <div class="community-card">
+                <div class="community-header">
+                    <h3>绿洲康城亲水湾</h3>
+                    <span class="community-tag">浦东·御桥</span>
+                </div>
+                <div class="community-images">
+                    <div class="img-box">
+                        <img src="images/lvzhou_inside.jpg" alt="小区内部">
+                        <span class="img-label">小区环境</span>
+                    </div>
+                    <div class="img-box">
+                        <img src="images/lvzhou_outside.jpg" alt="周边配套">
+                        <span class="img-label">建筑外观</span>
+                    </div>
+                </div>
+                <div class="community-info">
+                    <div class="info-row">
+                        <span class="info-label">参考均价</span>
+                        <span class="info-value">68,000元/㎡</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">主力户型</span>
+                        <span class="info-value">60-90㎡ 1-2房</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">总价区间</span>
+                        <span class="info-value highlight">400-610万</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">地铁</span>
+                        <span class="info-value">11/18号线御桥站 1.2km</span>
+                    </div>
+                </div>
+                <div class="community-advantages">
+                    <strong>核心优势：</strong>
+                    <ul>
+                        <li>浦东金色中环，发展潜力大</li>
+                        <li>亲水湾景观，宜居环境</li>
+                        <li>御桥科创园辐射区</li>
+                        <li>建平实验中学学区</li>
+                    </ul>
+                </div>
+                <div class="community-transaction">
+                    <span class="trans-label">3月成交</span>
+                    <span class="trans-value">18套 🔥🔥</span>
+                </div>
             </div>
         </div>
     </div>
