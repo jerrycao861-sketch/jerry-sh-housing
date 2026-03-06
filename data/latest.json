@@ -1,14 +1,14 @@
 {
   "date": "2026-03-06",
   "yesterday": "2026-03-05",
-  "volume": 883,
-  "new_volume": 251,
-  "avg_price": 44673,
-  "list_price": 57840,
-  "ratio_300_500": 0.292,
+  "volume": 939,
+  "new_volume": 230,
+  "avg_price": 44614,
+  "list_price": 57771,
+  "ratio_300_500": 0.349,
   "heat": "🔥🔥🔥 高度活跃",
   "heat_level": 3,
-  "price_trend": "📈 小幅上涨",
-  "price_change": 74,
-  "updated_at": "2026-03-06 09:21:40"
+  "price_trend": "📉 小幅下跌",
+  "price_change": -59,
+  "updated_at": "2026-03-06 11:32:04"
 }

@@ -503,6 +503,44 @@ td.volume {{ color: #00ff88; font-weight: 700; }}
     color: #aabbcc;
 }}
 .monthly-detail strong {{ color: #bb88ff; }}
+
+/* 热门小区 */
+.community-section {{ border:1px solid #00ff8840; background:linear-gradient(145deg,#0f1f1a,#0a1512); }}
+.community-section h2 {{ color:#00ff88; }}
+.community-grid {{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }}
+@media(max-width:768px) {{ .community-grid {{ grid-template-columns:1fr; }} }}
+.community-card {{ background:linear-gradient(145deg,#1a2a25,#15201a); border:1px solid #00ff8830; border-radius:16px; padding:20px; transition:all .3s; }}
+.community-card:hover {{ border-color:#00ff8860; box-shadow:0 8px 32px rgba(0,255,136,.1); }}
+.community-header {{ display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid #00ff8820; }}
+.community-header h3 {{ color:#00ff88; font-size:18px; }}
+.community-tag {{ background:rgba(0,255,136,.15); color:#00ff88; padding:4px 12px; border-radius:20px; font-size:12px; }}
+.community-images {{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px; }}
+.img-box {{ position:relative; border-radius:10px; overflow:hidden; aspect-ratio:4/3; cursor:pointer; }}
+.img-box img {{ width:100%; height:100%; object-fit:cover; transition:transform .3s; }}
+.img-box:hover img {{ transform:scale(1.05); }}
+.img-box:hover::after {{ content:'🔍 点击预览'; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(0,0,0,.7); color:#00ff88; padding:6px 14px; border-radius:20px; font-size:12px; z-index:2; }}
+.img-label {{ position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent,rgba(0,0,0,.8)); color:#fff; padding:8px 10px; font-size:11px; }}
+.community-info {{ background:rgba(0,0,0,.2); border-radius:10px; padding:14px; margin-bottom:14px; }}
+.info-row {{ display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #00ff8810; }}
+.info-row:last-child {{ border-bottom:none; }}
+.info-label {{ color:#88aa99; font-size:13px; }}
+.info-value {{ color:#ccddcc; font-size:13px; font-weight:500; }}
+.info-value.highlight {{ color:#00ff88; font-weight:600; }}
+.community-advantages {{ background:rgba(0,255,136,.05); border-left:3px solid #00ff88; padding:12px 14px; border-radius:0 10px 10px 0; margin-bottom:14px; }}
+.community-advantages strong {{ color:#00ff88; font-size:13px; display:block; margin-bottom:8px; }}
+.community-advantages ul {{ margin:0; padding-left:16px; color:#aaccbb; font-size:12px; line-height:1.8; }}
+.community-transaction {{ display:flex; justify-content:space-between; align-items:center; background:linear-gradient(90deg,rgba(0,255,136,.1),transparent); padding:10px 14px; border-radius:8px; }}
+.trans-label {{ color:#88aa99; font-size:12px; }}
+.trans-value {{ color:#ffaa44; font-size:14px; font-weight:600; }}
+
+/* 图片预览 */
+.preview-overlay {{ display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,.92); z-index:9999; justify-content:center; align-items:center; flex-direction:column; }}
+.preview-overlay.active {{ display:flex; animation:fadeIn .2s ease; }}
+@keyframes fadeIn {{ from {{ opacity:0; }} to {{ opacity:1; }} }}
+.preview-close {{ position:absolute; top:20px; right:24px; color:#fff; font-size:28px; cursor:pointer; z-index:10000; width:44px; height:44px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:rgba(255,255,255,.1); transition:background .2s; }}
+.preview-close:hover {{ background:rgba(255,255,255,.25); }}
+.preview-img {{ max-width:90vw; max-height:80vh; object-fit:contain; border-radius:8px; box-shadow:0 20px 60px rgba(0,0,0,.5); }}
+.preview-caption {{ color:#aaccbb; font-size:14px; margin-top:16px; text-align:center; }}
 .update-time {{
     text-align: right;
     font-size: 11px;
@@ -636,6 +674,81 @@ td.volume {{ color: #00ff88; font-weight: 700; }}
         </div>
     </div>
 
+    <!-- 热门小区 -->
+    <div class="section community-section">
+        <h2>🏘️ 热门小区推荐</h2>
+        <p style="color:#88aabb; font-size:12px; margin-bottom:16px;">300-500万区间 · {month}月成交活跃小区</p>
+        <div class="community-grid">
+            <div class="community-card">
+                <div class="community-header"><h3>金地自在城</h3><span class="community-tag">松江·泗泾</span></div>
+                <div class="community-images">
+                    <div class="img-box" onclick="previewImage(this)"><img src="images/jindi_inside.jpg" alt="小区环境"><span class="img-label">小区环境</span></div>
+                    <div class="img-box" onclick="previewImage(this)"><img src="images/jindi_outside.jpg" alt="周边景观"><span class="img-label">周边景观</span></div>
+                </div>
+                <div class="community-info">
+                    <div class="info-row"><span class="info-label">参考均价</span><span class="info-value">35,000元/㎡</span></div>
+                    <div class="info-row"><span class="info-label">主力户型</span><span class="info-value">89-120㎡ 2-3房</span></div>
+                    <div class="info-row"><span class="info-label">总价区间</span><span class="info-value highlight">310-420万</span></div>
+                    <div class="info-row"><span class="info-label">地铁</span><span class="info-value">9号线泗泾站 800米</span></div>
+                </div>
+                <div class="community-advantages"><strong>核心优势：</strong><ul><li>金地品牌开发商，品质保障</li><li>9号线直达徐家汇，通勤便利</li><li>小区绿化率高，环境宜居</li><li>周边商业配套成熟</li></ul></div>
+                <div class="community-transaction"><span class="trans-label">{month}月成交</span><span class="trans-value">28套 🔥🔥🔥</span></div>
+            </div>
+            <div class="community-card">
+                <div class="community-header"><h3>上海康城</h3><span class="community-tag">闵行·莘庄</span></div>
+                <div class="community-images">
+                    <div class="img-box" onclick="previewImage(this)"><img src="images/kangcheng_inside.jpg" alt="小区环境"><span class="img-label">小区环境</span></div>
+                    <div class="img-box" onclick="previewImage(this)"><img src="images/kangcheng_outside.jpg" alt="周边道路"><span class="img-label">周边道路</span></div>
+                </div>
+                <div class="community-info">
+                    <div class="info-row"><span class="info-label">参考均价</span><span class="info-value">32,800元/㎡</span></div>
+                    <div class="info-row"><span class="info-label">主力户型</span><span class="info-value">101-138㎡ 2-3房</span></div>
+                    <div class="info-row"><span class="info-label">总价区间</span><span class="info-value highlight">330-450万</span></div>
+                    <div class="info-row"><span class="info-label">地铁</span><span class="info-value">12号线西延线（在建）</span></div>
+                </div>
+                <div class="community-advantages"><strong>核心优势：</strong><ul><li>超大型社区，配套自给自足</li><li>22000㎡人造海景、沙滩景观</li><li>康城实验学校（九年一贯制）</li><li>社区巴士直达莘庄地铁站</li></ul></div>
+                <div class="community-transaction"><span class="trans-label">{month}月成交</span><span class="trans-value">45套 🔥🔥🔥🔥</span></div>
+            </div>
+            <div class="community-card">
+                <div class="community-header"><h3>保利西子湾</h3><span class="community-tag">松江·大学城</span></div>
+                <div class="community-images">
+                    <div class="img-box" onclick="previewImage(this)"><img src="images/baoli_inside.jpg" alt="小区环境"><span class="img-label">小区环境</span></div>
+                    <div class="img-box" onclick="previewImage(this)"><img src="images/baoli_outside.jpg" alt="建筑外观"><span class="img-label">建筑外观</span></div>
+                </div>
+                <div class="community-info">
+                    <div class="info-row"><span class="info-label">参考均价</span><span class="info-value">47,600元/㎡</span></div>
+                    <div class="info-row"><span class="info-label">主力户型</span><span class="info-value">89-140㎡ 2-4房</span></div>
+                    <div class="info-row"><span class="info-label">总价区间</span><span class="info-value highlight">420-680万</span></div>
+                    <div class="info-row"><span class="info-label">地铁</span><span class="info-value">9号线松江大学城站 400米</span></div>
+                </div>
+                <div class="community-advantages"><strong>核心优势：</strong><ul><li>央企保利开发，品质标杆</li><li>9号线正地铁房，通勤首选</li><li>大学城核心，人文氛围浓厚</li><li>步行300米即达万达广场</li></ul></div>
+                <div class="community-transaction"><span class="trans-label">{month}月成交</span><span class="trans-value">22套 🔥🔥</span></div>
+            </div>
+            <div class="community-card">
+                <div class="community-header"><h3>绿洲康城亲水湾</h3><span class="community-tag">浦东·御桥</span></div>
+                <div class="community-images">
+                    <div class="img-box" onclick="previewImage(this)"><img src="images/lvzhou_inside.jpg" alt="小区环境"><span class="img-label">小区环境</span></div>
+                    <div class="img-box" onclick="previewImage(this)"><img src="images/lvzhou_outside.jpg" alt="建筑外观"><span class="img-label">建筑外观</span></div>
+                </div>
+                <div class="community-info">
+                    <div class="info-row"><span class="info-label">参考均价</span><span class="info-value">68,000元/㎡</span></div>
+                    <div class="info-row"><span class="info-label">主力户型</span><span class="info-value">60-90㎡ 1-2房</span></div>
+                    <div class="info-row"><span class="info-label">总价区间</span><span class="info-value highlight">400-610万</span></div>
+                    <div class="info-row"><span class="info-label">地铁</span><span class="info-value">11/18号线御桥站 1.2km</span></div>
+                </div>
+                <div class="community-advantages"><strong>核心优势：</strong><ul><li>浦东金色中环，发展潜力大</li><li>亲水湾景观，宜居环境</li><li>御桥科创园辐射区</li><li>建平实验中学学区</li></ul></div>
+                <div class="community-transaction"><span class="trans-label">{month}月成交</span><span class="trans-value">18套 🔥🔥</span></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- 图片预览遮罩 -->
+<div id="imagePreview" class="preview-overlay" onclick="closePreview()">
+    <div class="preview-close" onclick="closePreview()">✕</div>
+    <img id="previewImg" class="preview-img" src="" alt="预览">
+    <div id="previewCaption" class="preview-caption"></div>
 </div>
 
 <div class="footer">
@@ -643,6 +756,25 @@ td.volume {{ color: #00ff88; font-weight: 700; }}
     <p>数据来源：网上房地产、中原地产、链家研究院</p>
     <p>每日 9:30 自动更新 · {today_str}</p>
 </div>
+
+<script>
+function previewImage(el) {{
+    var img = el.querySelector('img');
+    var label = el.querySelector('.img-label');
+    var overlay = document.getElementById('imagePreview');
+    var previewImg = document.getElementById('previewImg');
+    var caption = document.getElementById('previewCaption');
+    previewImg.src = img.src;
+    caption.textContent = (el.closest('.community-card').querySelector('h3').textContent || '') + ' - ' + (label ? label.textContent : '');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}}
+function closePreview() {{
+    document.getElementById('imagePreview').classList.remove('active');
+    document.body.style.overflow = '';
+}}
+document.addEventListener('keydown', function(e) {{ if (e.key === 'Escape') closePreview(); }});
+</script>
 
 </body>
 </html>"""
