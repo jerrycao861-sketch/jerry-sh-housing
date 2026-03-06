@@ -204,6 +204,7 @@ if os.path.exists(monthly_file):
 
 today = datetime.now()
 today_str = today.strftime("%Y年%m月%d日")
+month = today.strftime("%m").lstrip("0")
 weekdays = ["周一","周二","周三","周四","周五","周六","周日"]
 weekday = weekdays[today.weekday()]
 
