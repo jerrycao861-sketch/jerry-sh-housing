@@ -542,6 +542,43 @@ td.volume {{ color: #00ff88; font-weight: 700; }}
 .preview-close:hover {{ background:rgba(255,255,255,.25); }}
 .preview-img {{ max-width:90vw; max-height:80vh; object-fit:contain; border-radius:8px; box-shadow:0 20px 60px rgba(0,0,0,.5); }}
 .preview-caption {{ color:#aaccbb; font-size:14px; margin-top:16px; text-align:center; }}
+
+/* 挂牌房源模块 */
+.listing-section {{ border:1px solid #ffaa4440; background:linear-gradient(145deg,#1a1a10,#12120a); }}
+.listing-section h2 {{ color:#ffaa44; }}
+.listing-community {{ background:linear-gradient(145deg,#1a2018,#151a12); border:1px solid #ffffff15; border-radius:16px; margin-bottom:20px; overflow:hidden; }}
+.listing-community-header {{ display:flex; align-items:center; gap:12px; padding:18px 20px; cursor:pointer; transition:background .2s; flex-wrap:wrap; }}
+.listing-community-header:hover {{ background:rgba(255,170,68,.05); }}
+.listing-community-header h3 {{ color:#00ff88; font-size:16px; flex:1; }}
+.listing-count {{ background:rgba(255,170,68,.15); color:#ffaa44; padding:2px 10px; border-radius:12px; font-size:11px; margin-left:8px; font-weight:400; }}
+.listing-avg {{ color:#88aabb; font-size:13px; }}
+.toggle-icon {{ color:#88aabb; font-size:14px; transition:transform .3s; }}
+.listing-list {{ padding:0 20px 16px; }}
+.listing-item {{ display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px solid #ffffff08; gap:16px; }}
+.listing-item:last-of-type {{ border-bottom:none; }}
+.listing-main {{ flex:1; min-width:0; }}
+.listing-title {{ color:#ddeedd; font-size:14px; margin-bottom:8px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }}
+.listing-tags {{ display:flex; gap:6px; flex-wrap:wrap; }}
+.listing-tags span {{ padding:3px 8px; border-radius:4px; font-size:11px; }}
+.tag-layout {{ background:rgba(0,255,136,.1); color:#00ff88; }}
+.tag-area {{ background:rgba(100,180,255,.1); color:#88bbff; }}
+.tag-floor {{ background:rgba(255,255,255,.06); color:#99aabb; }}
+.tag-new {{ background:rgba(255,68,68,.15); color:#ff6666; }}
+.tag-metro {{ background:rgba(136,68,255,.15); color:#aa88ff; }}
+.listing-price-area {{ text-align:right; min-width:100px; }}
+.listing-total {{ color:#ff6644; font-size:24px; font-weight:700; }}
+.listing-total .unit {{ font-size:13px; font-weight:400; color:#ff8866; }}
+.listing-unit {{ color:#88aabb; font-size:11px; margin-top:2px; }}
+.listing-heat {{ color:#ffaa44; font-size:11px; margin-top:4px; }}
+.listing-more {{ text-align:center; padding:12px; color:#00ff88; font-size:13px; cursor:pointer; border-top:1px solid #ffffff08; margin-top:8px; transition:color .2s; }}
+.listing-more:hover {{ color:#66ffbb; }}
+.listing-price-trend {{ padding:16px 20px; border-top:1px solid #ffffff08; }}
+.trend-title {{ color:#88aabb; font-size:12px; margin-bottom:10px; }}
+.price-range-bar {{ display:flex; height:28px; border-radius:6px; overflow:hidden; }}
+.range-segment {{ background:linear-gradient(180deg,rgba(0,255,136,.25),rgba(0,255,136,.1)); display:flex; align-items:center; justify-content:center; gap:6px; font-size:10px; color:#aaccbb; border-right:1px solid #0a0f0a; position:relative; }}
+.range-segment.mid {{ background:linear-gradient(180deg,rgba(255,170,68,.25),rgba(255,170,68,.1)); }}
+.range-segment.high {{ background:linear-gradient(180deg,rgba(255,100,68,.25),rgba(255,100,68,.1)); border-right:none; }}
+.seg-pct {{ font-weight:600; color:#fff; }}
 .update-time {{
     text-align: right;
     font-size: 11px;
@@ -743,6 +780,226 @@ td.volume {{ color: #00ff88; font-weight: 700; }}
         </div>
     </div>
 
+    <!-- 挂牌价变动模块 -->
+    <div class="section listing-section">
+        <h2>📈 热门小区挂牌房源 & 价格变动</h2>
+        <p style="color:#88aabb; font-size:12px; margin-bottom:16px;">贝壳找房实时数据 · 300-500万区间</p>
+
+        <!-- 金地自在城 -->
+        <div class="listing-community">
+            <div class="listing-community-header" onclick="toggleListings('jindi-listings')">
+                <h3>🏠 金地自在城（二期）<span class="listing-count">69套在售</span></h3>
+                <span class="listing-avg">均价 35,208元/㎡</span>
+                <span class="toggle-icon" id="jindi-listings-icon">▼</span>
+            </div>
+            <div class="listing-list" id="jindi-listings">
+                <div class="listing-item">
+                    <div class="listing-main">
+                        <div class="listing-title">满五年，税费少，采光充足</div>
+                        <div class="listing-tags"><span class="tag-layout">3室1厅</span><span class="tag-area">94.47㎡</span><span class="tag-floor">低楼层/18层</span></div>
+                    </div>
+                    <div class="listing-price-area">
+                        <div class="listing-total">309<span class="unit">万</span></div>
+                        <div class="listing-unit">32,709元/㎡</div>
+                        <div class="listing-heat">👁 24人关注</div>
+                    </div>
+                </div>
+                <div class="listing-item">
+                    <div class="listing-main">
+                        <div class="listing-title">满五年，采光好，户口</div>
+                        <div class="listing-tags"><span class="tag-layout">3室2厅</span><span class="tag-area">95.98㎡</span><span class="tag-floor">低楼层/17层</span></div>
+                    </div>
+                    <div class="listing-price-area">
+                        <div class="listing-total">340<span class="unit">万</span></div>
+                        <div class="listing-unit">35,425元/㎡</div>
+                        <div class="listing-heat">🔥 72人关注</div>
+                    </div>
+                </div>
+                <div class="listing-item">
+                    <div class="listing-main">
+                        <div class="listing-title">楼栋位置好，视野开阔，临河景观</div>
+                        <div class="listing-tags"><span class="tag-layout">3室2厅</span><span class="tag-area">92.97㎡</span><span class="tag-floor">中楼层/16层</span></div>
+                    </div>
+                    <div class="listing-price-area">
+                        <div class="listing-total">308<span class="unit">万</span></div>
+                        <div class="listing-unit">33,129元/㎡</div>
+                        <div class="listing-heat">🔥 82人关注</div>
+                    </div>
+                </div>
+                <div class="listing-item hidden-listing" style="display:none;">
+                    <div class="listing-main">
+                        <div class="listing-title">南北通两房，户型方正</div>
+                        <div class="listing-tags"><span class="tag-layout">2室2厅</span><span class="tag-area">79.1㎡</span><span class="tag-floor">高楼层/17层</span></div>
+                    </div>
+                    <div class="listing-price-area">
+                        <div class="listing-total">289<span class="unit">万</span></div>
+                        <div class="listing-unit">36,537元/㎡</div>
+                        <div class="listing-heat">🔥🔥 158人关注</div>
+                    </div>
+                </div>
+                <div class="listing-item hidden-listing" style="display:none;">
+                    <div class="listing-main">
+                        <div class="listing-title">景观楼层 三房二卫飞机户型 视野开阔</div>
+                        <div class="listing-tags"><span class="tag-layout">3室2厅</span><span class="tag-area">110.57㎡</span><span class="tag-floor">中楼层/17层</span></div>
+                    </div>
+                    <div class="listing-price-area">
+                        <div class="listing-total">458<span class="unit">万</span></div>
+                        <div class="listing-unit">41,422元/㎡</div>
+                        <div class="listing-heat">👁 34人关注</div>
+                    </div>
+                </div>
+                <div class="listing-item hidden-listing" style="display:none;">
+                    <div class="listing-main">
+                        <div class="listing-title">户型好，楼层好，拎包入住</div>
+                        <div class="listing-tags"><span class="tag-layout">3室2厅</span><span class="tag-area">111.11㎡</span><span class="tag-floor">中楼层/17层</span></div>
+                    </div>
+                    <div class="listing-price-area">
+                        <div class="listing-total">498<span class="unit">万</span></div>
+                        <div class="listing-unit">44,821元/㎡</div>
+                        <div class="listing-heat">👁 24人关注</div>
+                    </div>
+                </div>
+                <div class="listing-more" onclick="toggleMore(this, 'jindi')">展开更多房源 ▼</div>
+            </div>
+            <div class="listing-price-trend">
+                <div class="trend-title">📊 挂牌价分布</div>
+                <div class="price-range-bar">
+                    <div class="range-segment" style="width:35%"><span>289-340万</span><span class="seg-pct">35%</span></div>
+                    <div class="range-segment mid" style="width:40%"><span>340-460万</span><span class="seg-pct">40%</span></div>
+                    <div class="range-segment high" style="width:25%"><span>460万+</span><span class="seg-pct">25%</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 上海康城 -->
+        <div class="listing-community">
+            <div class="listing-community-header" onclick="toggleListings('kangcheng-listings')">
+                <h3>🏠 上海康城<span class="listing-count">在售房源</span></h3>
+                <span class="listing-avg">均价 30,500元/㎡</span>
+                <span class="toggle-icon" id="kangcheng-listings-icon">▼</span>
+            </div>
+            <div class="listing-list" id="kangcheng-listings" style="display:none;">
+                <div class="listing-item">
+                    <div class="listing-main">
+                        <div class="listing-title">6+1三房居家装修 更宽阳台更好采光</div>
+                        <div class="listing-tags"><span class="tag-layout">3室2厅</span><span class="tag-area">118.72㎡</span><span class="tag-floor">低楼层/13层</span></div>
+                    </div>
+                    <div class="listing-price-area">
+                        <div class="listing-total">368<span class="unit">万</span></div>
+                        <div class="listing-unit">30,998元/㎡</div>
+                        <div class="listing-heat">🔥 62人关注</div>
+                    </div>
+                </div>
+                <div class="listing-item">
+                    <div class="listing-main">
+                        <div class="listing-title">总价低 楼间距宽 交通方便</div>
+                        <div class="listing-tags"><span class="tag-layout">2室2厅</span><span class="tag-area">93.07㎡</span><span class="tag-floor">低楼层/17层</span><span class="tag-new">新上</span></div>
+                    </div>
+                    <div class="listing-price-area">
+                        <div class="listing-total">288<span class="unit">万</span></div>
+                        <div class="listing-unit">30,945元/㎡</div>
+                        <div class="listing-heat">👁 14人关注</div>
+                    </div>
+                </div>
+                <div class="listing-item">
+                    <div class="listing-main">
+                        <div class="listing-title">康城刚需上车！两房朝南，位置安静</div>
+                        <div class="listing-tags"><span class="tag-layout">2室2厅</span><span class="tag-area">90.59㎡</span><span class="tag-floor">中楼层/17层</span></div>
+                    </div>
+                    <div class="listing-price-area">
+                        <div class="listing-total">268<span class="unit">万</span></div>
+                        <div class="listing-unit">29,584元/㎡</div>
+                        <div class="listing-heat">🔥🔥 114人关注</div>
+                    </div>
+                </div>
+                <div class="listing-item hidden-listing" style="display:none;">
+                    <div class="listing-main">
+                        <div class="listing-title">三期近南门 高层双南厅朝南</div>
+                        <div class="listing-tags"><span class="tag-layout">2室2厅</span><span class="tag-area">103.14㎡</span><span class="tag-floor">高楼层/15层</span></div>
+                    </div>
+                    <div class="listing-price-area">
+                        <div class="listing-total">305<span class="unit">万</span></div>
+                        <div class="listing-unit">29,572元/㎡</div>
+                        <div class="listing-heat">🔥🔥 124人关注</div>
+                    </div>
+                </div>
+                <div class="listing-item hidden-listing" style="display:none;">
+                    <div class="listing-main">
+                        <div class="listing-title">精装三开间朝南，带南北三个阳台</div>
+                        <div class="listing-tags"><span class="tag-layout">3室2厅</span><span class="tag-area">135.79㎡</span><span class="tag-floor">低楼层/15层</span><span class="tag-new">新上</span></div>
+                    </div>
+                    <div class="listing-price-area">
+                        <div class="listing-total">430<span class="unit">万</span></div>
+                        <div class="listing-unit">31,667元/㎡</div>
+                        <div class="listing-heat">👁 8人关注</div>
+                    </div>
+                </div>
+                <div class="listing-more" onclick="toggleMore(this, 'kangcheng')">展开更多房源 ▼</div>
+            </div>
+            <div class="listing-price-trend">
+                <div class="trend-title">📊 挂牌价分布</div>
+                <div class="price-range-bar">
+                    <div class="range-segment" style="width:45%"><span>268-305万</span><span class="seg-pct">45%</span></div>
+                    <div class="range-segment mid" style="width:35%"><span>305-400万</span><span class="seg-pct">35%</span></div>
+                    <div class="range-segment high" style="width:20%"><span>400万+</span><span class="seg-pct">20%</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 保利西子湾 -->
+        <div class="listing-community">
+            <div class="listing-community-header" onclick="toggleListings('baoli-listings')">
+                <h3>🏠 保利西子湾<span class="listing-count">在售房源</span></h3>
+                <span class="listing-avg">均价 37,800元/㎡</span>
+                <span class="toggle-icon" id="baoli-listings-icon">▼</span>
+            </div>
+            <div class="listing-list" id="baoli-listings" style="display:none;">
+                <div class="listing-item">
+                    <div class="listing-main">
+                        <div class="listing-title">新上2房+采光好位置佳+诚意出手</div>
+                        <div class="listing-tags"><span class="tag-layout">2室2厅</span><span class="tag-area">90.42㎡</span><span class="tag-floor">低楼层/14层</span><span class="tag-metro">近地铁</span></div>
+                    </div>
+                    <div class="listing-price-area">
+                        <div class="listing-total">319<span class="unit">万</span></div>
+                        <div class="listing-unit">35,280元/㎡</div>
+                        <div class="listing-heat">🔥🔥 154人关注</div>
+                    </div>
+                </div>
+                <div class="listing-item">
+                    <div class="listing-main">
+                        <div class="listing-title">保利二期直通厅，楼间距宽，满五年</div>
+                        <div class="listing-tags"><span class="tag-layout">2室2厅</span><span class="tag-area">89㎡</span><span class="tag-floor">低楼层/18层</span></div>
+                    </div>
+                    <div class="listing-price-area">
+                        <div class="listing-total">368<span class="unit">万</span></div>
+                        <div class="listing-unit">41,349元/㎡</div>
+                        <div class="listing-heat">👁 38人关注</div>
+                    </div>
+                </div>
+                <div class="listing-item">
+                    <div class="listing-main">
+                        <div class="listing-title">二期临河，高楼层，采光视野好</div>
+                        <div class="listing-tags"><span class="tag-layout">2室2厅</span><span class="tag-area">89.03㎡</span><span class="tag-floor">中楼层/18层</span></div>
+                    </div>
+                    <div class="listing-price-area">
+                        <div class="listing-total">360<span class="unit">万</span></div>
+                        <div class="listing-unit">40,436元/㎡</div>
+                        <div class="listing-heat">👁 23人关注</div>
+                    </div>
+                </div>
+                <div class="listing-more" onclick="toggleMore(this, 'baoli')">展开更多房源 ▼</div>
+            </div>
+            <div class="listing-price-trend">
+                <div class="trend-title">📊 挂牌价分布</div>
+                <div class="price-range-bar">
+                    <div class="range-segment" style="width:30%"><span>186-319万</span><span class="seg-pct">30%</span></div>
+                    <div class="range-segment mid" style="width:50%"><span>319-400万</span><span class="seg-pct">50%</span></div>
+                    <div class="range-segment high" style="width:20%"><span>400万+</span><span class="seg-pct">20%</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <!-- 图片预览遮罩 -->
@@ -775,6 +1032,29 @@ function closePreview() {{
     document.body.style.overflow = '';
 }}
 document.addEventListener('keydown', function(e) {{ if (e.key === 'Escape') closePreview(); }});
+
+function toggleListings(id) {{
+    var el = document.getElementById(id);
+    var icon = document.getElementById(id + '-icon');
+    if (el.style.display === 'none') {{
+        el.style.display = 'block';
+        if (icon) icon.textContent = '▲';
+    }} else {{
+        el.style.display = 'none';
+        if (icon) icon.textContent = '▼';
+    }}
+}}
+
+function toggleMore(btn, community) {{
+    var parent = btn.parentElement;
+    var hiddenItems = parent.querySelectorAll('.hidden-listing');
+    var isExpanded = btn.getAttribute('data-expanded') === 'true';
+    hiddenItems.forEach(function(item) {{
+        item.style.display = isExpanded ? 'none' : 'flex';
+    }});
+    btn.setAttribute('data-expanded', isExpanded ? 'false' : 'true');
+    btn.textContent = isExpanded ? '展开更多房源 ▼' : '收起 ▲';
+}}
 </script>
 
 </body>
