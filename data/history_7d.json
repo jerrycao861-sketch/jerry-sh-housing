@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-03-09",
+    "yesterday": "2026-03-08",
+    "volume": 845,
+    "new_volume": 472,
+    "avg_price": 44461,
+    "list_price": 57785,
+    "ratio_300_500": 0.309,
+    "heat": "🔥🔥🔥 高度活跃",
+    "heat_level": 3,
+    "price_trend": "📉 小幅下跌",
+    "price_change": -178,
+    "updated_at": "2026-03-09 15:52:32"
+  },
+  {
     "date": "2026-03-06",
     "yesterday": "2026-03-05",
     "volume": 922,
@@ -40,33 +54,5 @@
     "price_trend": "📉 小幅下跌",
     "price_change": -62,
     "updated_at": "2026-03-03 09:30:00"
-  },
-  {
-    "date": "2026-03-02",
-    "yesterday": "2026-03-01",
-    "volume": 587,
-    "new_volume": 280,
-    "avg_price": 44800,
-    "list_price": 58057,
-    "ratio_300_500": 0.335,
-    "heat": "🔥🔥 正常偏热",
-    "heat_level": 2,
-    "price_trend": "📉 小幅下跌",
-    "price_change": -200,
-    "updated_at": "2026-03-02 09:53:45"
-  },
-  {
-    "date": "2026-03-01",
-    "yesterday": "2026-02-28",
-    "volume": 612,
-    "new_volume": 295,
-    "avg_price": 45000,
-    "list_price": 58100,
-    "ratio_300_500": 0.338,
-    "heat": "🔥🔥 正常偏热",
-    "heat_level": 2,
-    "price_trend": "➡️ 平稳",
-    "price_change": 0,
-    "updated_at": "2026-03-01 09:30:00"
   }
 ]

@@ -5,3 +5,4 @@ data/tunnel_url*
 .DS_Store
 __pycache__
 *.pyc.github_token
+.github_token
