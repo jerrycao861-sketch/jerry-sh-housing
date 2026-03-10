@@ -1092,8 +1092,12 @@ else
 fi
 
 # 提交并推送更新到 GitHub
+# 修复：确保 .github_token 不被 git 追踪
 cd "$WORK_DIR"
+git rm --cached .github_token 2>/dev/null
 git add -A
+# 排除 .github_token
+git reset HEAD .github_token 2>/dev/null
 git commit -m "Auto update: $TODAY - Daily housing data" >> "$LOG_FILE" 2>&1 || true
 
 if [ -n "$GITHUB_TOKEN" ]; then
