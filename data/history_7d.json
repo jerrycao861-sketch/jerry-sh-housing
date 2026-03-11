@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-03-11",
+    "yesterday": "2026-03-10",
+    "volume": 977,
+    "new_volume": 373,
+    "avg_price": 44365,
+    "list_price": 57848,
+    "ratio_300_500": 0.299,
+    "heat": "🔥🔥🔥 高度活跃",
+    "heat_level": 3,
+    "price_trend": "➡️ 基本持平",
+    "price_change": 6,
+    "updated_at": "2026-03-11 11:46:38"
+  },
+  {
     "date": "2026-03-10",
     "yesterday": "2026-03-09",
     "volume": 916,
@@ -82,19 +96,5 @@
     "price_trend": "➡️ 基本持平",
     "price_change": -29,
     "updated_at": "2026-03-05 09:30:00"
-  },
-  {
-    "date": "2026-03-04",
-    "yesterday": "2026-03-03",
-    "volume": 795,
-    "new_volume": 497,
-    "avg_price": 44599,
-    "list_price": 57849,
-    "ratio_300_500": 0.321,
-    "heat": "🔥🔥🔥 高度活跃",
-    "heat_level": 3,
-    "price_trend": "➡️ 基本持平",
-    "price_change": -29,
-    "updated_at": "2026-03-04 14:28:10"
   }
 ]
