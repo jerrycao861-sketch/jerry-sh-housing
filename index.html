@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>上海房市日报 - 2026年03月11日</title>
+<title>上海房市日报 - 2026年03月20日</title>
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
@@ -308,296 +308,15 @@ td.volume { color: #00ff88; font-weight: 700; }
     color: #556677;
     margin-top: 8px;
 }
-
-/* AI 机器人搜索框样式 */
-.ai-search-container {
-    max-width: 700px;
-    margin: 25px auto 0;
-    padding: 0 20px;
-    position: relative;
-    z-index: 10;
-}
-.ai-search-box {
-    background: linear-gradient(145deg, rgba(20,30,40,0.95), rgba(15,25,35,0.98));
-    border: 1px solid rgba(0,255,136,0.3);
-    border-radius: 50px;
-    padding: 4px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 20px rgba(0,255,136,0.1);
-    transition: all 0.3s ease;
-}
-.ai-search-box:focus-within {
-    border-color: rgba(0,255,136,0.6);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 30px rgba(0,255,136,0.2);
-}
-.ai-avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    flex-shrink: 0;
-    animation: aiPulse 2s ease-in-out infinite;
-}
-@keyframes aiPulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(0,255,136,0.4); }
-    50% { box-shadow: 0 0 0 10px rgba(0,255,136,0); }
-}
-.ai-search-input {
-    flex: 1;
-    background: transparent;
-    border: none;
-    color: #e8edf3;
-    font-size: 15px;
-    padding: 12px 0;
-    outline: none;
-}
-.ai-search-input::placeholder {
-    color: #668899;
-}
-.ai-search-btn {
-    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
-    border: none;
-    color: #0f1923;
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-.ai-search-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0,255,136,0.4);
-}
-.ai-search-btn:active {
-    transform: translateY(0);
-}
-.ai-chat-window {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 380px;
-    height: 500px;
-    background: linear-gradient(180deg, #1a2a35 0%, #0f1923 100%);
-    border: 1px solid rgba(0,255,136,0.3);
-    border-radius: 16px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-    z-index: 1000;
-    flex-direction: column;
-    overflow: hidden;
-}
-.ai-chat-window.active {
-    display: flex;
-}
-.ai-chat-header {
-    background: linear-gradient(135deg, rgba(0,255,136,0.15), rgba(0,200,100,0.1));
-    padding: 15px 20px;
-    border-bottom: 1px solid rgba(0,255,136,0.2);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-.ai-chat-header .ai-avatar {
-    width: 36px;
-    height: 36px;
-    font-size: 18px;
-    animation: none;
-}
-.ai-chat-title {
-    flex: 1;
-    color: #00ff88;
-    font-weight: 600;
-}
-.ai-chat-close {
-    background: none;
-    border: none;
-    color: #88aabb;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 4px;
-}
-.ai-chat-close:hover {
-    color: #fff;
-}
-.ai-chat-messages {
-    flex: 1;
-    overflow-y: auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-.ai-message {
-    max-width: 85%;
-    padding: 12px 16px;
-    border-radius: 16px;
-    font-size: 14px;
-    line-height: 1.6;
-}
-.ai-message.user {
-    align-self: flex-end;
-    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
-    color: #0f1923;
-    border-bottom-right-radius: 4px;
-}
-.ai-message.bot {
-    align-self: flex-start;
-    background: rgba(255,255,255,0.08);
-    color: #e8edf3;
-    border-bottom-left-radius: 4px;
-}
-.ai-chat-input-area {
-    padding: 15px 20px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    display: flex;
-    gap: 10px;
-}
-.ai-chat-input {
-    flex: 1;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 20px;
-    padding: 10px 16px;
-    color: #e8edf3;
-    font-size: 14px;
-    outline: none;
-}
-.ai-chat-input:focus {
-    border-color: rgba(0,255,136,0.5);
-}
-.ai-chat-send {
-    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
-    border: none;
-    color: #0f1923;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.ai-chat-send:hover {
-    transform: scale(1.05);
-}
-.ai-quick-questions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 0 20px 15px;
-}
-.ai-quick-btn {
-    background: rgba(0,255,136,0.1);
-    border: 1px solid rgba(0,255,136,0.3);
-    color: #00ff88;
-    padding: 6px 14px;
-    border-radius: 16px;
-    font-size: 12px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-.ai-quick-btn:hover {
-    background: rgba(0,255,136,0.2);
-}
-.ai-floating-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
-    border: none;
-    color: #0f1923;
-    font-size: 28px;
-    cursor: pointer;
-    box-shadow: 0 4px 20px rgba(0,255,136,0.4);
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-}
-.ai-floating-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 30px rgba(0,255,136,0.5);
-}
-.ai-floating-btn.hidden {
-    display: none;
-}
-@media (max-width: 480px) {
-    .ai-chat-window {
-        width: 100%;
-        height: 100%;
-        bottom: 0;
-        right: 0;
-        border-radius: 0;
-    }
-    .ai-search-container {
-        padding: 0 15px;
-    }
-    .ai-search-btn {
-        padding: 10px 16px;
-        font-size: 13px;
-    }
-}
 </style>
 </head>
 <body>
 
 <div class="header">
     <h1>上海房市日报</h1>
-    <div class="date">2026年03月11日 周三</div>
+    <div class="date">2026年03月20日 周五</div>
     <div class="badge">300-500万区间专项追踪</div>
-    
-    <!-- AI 搜索框 -->
-    <div class="ai-search-container">
-        <div class="ai-search-box">
-            <div class="ai-avatar">🤖</div>
-            <input type="text" class="ai-search-input" id="aiSearchInput" placeholder="问我关于上海房市的问题，比如：今天成交多少套？300万能买哪里？" onkeypress="if(event.key==='Enter')openAIChat()">
-            <button class="ai-search-btn" onclick="openAIChat()">
-                <span>AI 问答</span>
-                <span>→</span>
-            </button>
-        </div>
-    </div>
 </div>
-
-<!-- AI 聊天窗口 -->
-<div class="ai-chat-window" id="aiChatWindow">
-    <div class="ai-chat-header">
-        <div class="ai-avatar">🤖</div>
-        <div class="ai-chat-title">房市 AI 助手</div>
-        <button class="ai-chat-close" onclick="closeAIChat()">✕</button>
-    </div>
-    <div class="ai-chat-messages" id="aiChatMessages">
-        <div class="ai-message bot">您好！我是您的上海房市 AI 助手。我可以帮您查询：<br>• 今日成交数据<br>• 热门小区推荐<br>• 价格走势分析<br>• 购房建议<br><br>请问有什么可以帮您？</div>
-    </div>
-    <div class="ai-quick-questions">
-        <button class="ai-quick-btn" onclick="sendQuickQuestion('今天成交多少套？')">今天成交多少套？</button>
-        <button class="ai-quick-btn" onclick="sendQuickQuestion('300万推荐买哪里？')">300万推荐买哪里？</button>
-        <button class="ai-quick-btn" onclick="sendQuickQuestion('最近房价走势如何？')">最近房价走势？</button>
-        <button class="ai-quick-btn" onclick="sendQuickQuestion('哪个小区性价比最高？')">性价比最高小区？</button>
-    </div>
-    <div class="ai-chat-input-area">
-        <input type="text" class="ai-chat-input" id="aiChatInput" placeholder="输入您的问题..." onkeypress="if(event.key==='Enter')sendAIQuestion()">
-        <button class="ai-chat-send" onclick="sendAIQuestion()">➤</button>
-    </div>
-</div>
-
-<!-- 悬浮 AI 按钮 -->
-<button class="ai-floating-btn" id="aiFloatingBtn" onclick="openAIChat()">🤖</button>
 
 <div class="container">
 
@@ -607,22 +326,22 @@ td.volume { color: #00ff88; font-weight: 700; }
         <div class="card-grid">
             <div class="stat-card green">
                 <div class="stat-label">二手房成交</div>
-                <div class="stat-value">1068</div>
+                <div class="stat-value">1106</div>
                 <div class="stat-sub">套</div>
             </div>
             <div class="stat-card orange">
                 <div class="stat-label">新房成交</div>
-                <div class="stat-value">225</div>
+                <div class="stat-value">291</div>
                 <div class="stat-sub">套</div>
             </div>
             <div class="stat-card blue">
                 <div class="stat-label">成交均价</div>
-                <div class="stat-value">44,371</div>
-                <div class="stat-sub">元/㎡ ➡️ 基本持平</div>
+                <div class="stat-value">44,310</div>
+                <div class="stat-sub">元/㎡ 📉 小幅下跌</div>
             </div>
             <div class="stat-card red">
                 <div class="stat-label">挂牌均价</div>
-                <div class="stat-value">57,934</div>
+                <div class="stat-value">57,988</div>
                 <div class="stat-sub">元/㎡</div>
             </div>
         </div>
@@ -630,9 +349,9 @@ td.volume { color: #00ff88; font-weight: 700; }
         <div class="heat-bar">
             <div class="heat-indicator"></div>
             <span class="heat-text">🔥🔥🔥 高度活跃</span>
-            <span class="heat-desc">300-500万占比 30.3%</span>
+            <span class="heat-desc">300-500万占比 34.7%</span>
         </div>
-        <div class="update-time">更新时间：2026-03-11 13:40:48</div>
+        <div class="update-time">更新时间：2026-03-20 10:55:59</div>
     </div>
 
     
@@ -645,39 +364,14 @@ td.volume { color: #00ff88; font-weight: 700; }
             <div class="bar-chart">
                 
                 <div class="bar-item">
-                    <div class="bar-value">678</div>
-                    <div class="bar" style="height:88px"></div>
-                    <div class="bar-label">03-05</div>
+                    <div class="bar-value">821</div>
+                    <div class="bar" style="height:103px"></div>
+                    <div class="bar-label">03-14</div>
                 </div>
                 <div class="bar-item">
-                    <div class="bar-value">922</div>
-                    <div class="bar" style="height:120px"></div>
-                    <div class="bar-label">03-06</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar-value">512</div>
-                    <div class="bar" style="height:67px"></div>
-                    <div class="bar-label">03-07</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar-value">756</div>
-                    <div class="bar" style="height:99px"></div>
-                    <div class="bar-label">03-08</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar-value">845</div>
-                    <div class="bar" style="height:110px"></div>
-                    <div class="bar-label">03-09</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar-value">916</div>
-                    <div class="bar" style="height:120px"></div>
-                    <div class="bar-label">03-10</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar-value">1068</div>
+                    <div class="bar-value">1106</div>
                     <div class="bar" style="height:140px"></div>
-                    <div class="bar-label">03-11</div>
+                    <div class="bar-label">03-20</div>
                 </div>
             </div>
         </div>
@@ -701,67 +395,22 @@ td.volume { color: #00ff88; font-weight: 700; }
             </thead>
             <tbody>
         <tr>
-            <td>2026-03-11</td>
-            <td class="volume">1068</td>
-            <td>225</td>
-            <td>44,371</td>
-            <td>57,934</td>
-            <td>➡️ 基本持平</td>
-            <td>🔥🔥🔥</td>
-        </tr>
-        <tr>
-            <td>2026-03-10</td>
-            <td class="volume">916</td>
-            <td>233</td>
-            <td>44,359</td>
-            <td>57,822</td>
+            <td>2026-03-20</td>
+            <td class="volume">1106</td>
+            <td>291</td>
+            <td>44,310</td>
+            <td>57,988</td>
             <td>📉 小幅下跌</td>
             <td>🔥🔥🔥</td>
         </tr>
         <tr>
-            <td>2026-03-09</td>
-            <td class="volume">845</td>
-            <td>472</td>
-            <td>44,461</td>
-            <td>57,785</td>
-            <td>📉 小幅下跌</td>
-            <td>🔥🔥🔥</td>
-        </tr>
-        <tr>
-            <td>2026-03-08</td>
-            <td class="volume">756</td>
+            <td>2026-03-14</td>
+            <td class="volume">821</td>
             <td>412</td>
-            <td>44,720</td>
-            <td>57,800</td>
-            <td>📈 小幅上涨</td>
-            <td>🔥🔥🔥</td>
-        </tr>
-        <tr>
-            <td>2026-03-07</td>
-            <td class="volume">512</td>
-            <td>268</td>
-            <td>44,680</td>
-            <td>57,750</td>
-            <td>📈 小幅上涨</td>
-            <td>🔥🔥</td>
-        </tr>
-        <tr>
-            <td>2026-03-06</td>
-            <td class="volume">922</td>
-            <td>397</td>
-            <td>44,639</td>
-            <td>57,712</td>
-            <td>📈 小幅上涨</td>
-            <td>🔥🔥🔥</td>
-        </tr>
-        <tr>
-            <td>2026-03-05</td>
-            <td class="volume">678</td>
-            <td>345</td>
-            <td>44,570</td>
-            <td>57,780</td>
+            <td>44,280</td>
+            <td>57,720</td>
             <td>➡️ 基本持平</td>
-            <td>🔥🔥</td>
+            <td>🔥🔥🔥</td>
         </tr></tbody>
         </table>
         </div>
@@ -788,22 +437,22 @@ td.volume { color: #00ff88; font-weight: 700; }
         <div class="card-grid">
             <div class="stat-card green">
                 <div class="stat-label">本周日均</div>
-                <div class="stat-value">814</div>
+                <div class="stat-value">964</div>
                 <div class="stat-sub">套/日</div>
             </div>
             <div class="stat-card blue">
                 <div class="stat-label">记录天数</div>
-                <div class="stat-value">7</div>
+                <div class="stat-value">2</div>
                 <div class="stat-sub">天</div>
             </div>
             <div class="stat-card orange">
                 <div class="stat-label">最高成交</div>
-                <div class="stat-value">1068</div>
+                <div class="stat-value">1106</div>
                 <div class="stat-sub">套</div>
             </div>
             <div class="stat-card red">
                 <div class="stat-label">最低成交</div>
-                <div class="stat-value">512</div>
+                <div class="stat-value">821</div>
                 <div class="stat-sub">套</div>
             </div>
         </div>
@@ -1109,7 +758,7 @@ td.volume { color: #00ff88; font-weight: 700; }
 <div class="footer">
     <p>上海房市追踪系统 · 300-500万区间专项</p>
     <p>数据来源：网上房地产、中原地产、链家研究院</p>
-    <p>每日 9:30 自动更新 · 2026年03月11日</p>
+    <p>每日 9:30 自动更新 · 2026年03月20日</p>
 </div>
 
 <script>
@@ -1152,114 +801,6 @@ function toggleMore(btn, community) {
     btn.setAttribute('data-expanded', isExpanded ? 'false' : 'true');
     btn.textContent = isExpanded ? '展开更多房源 ▼' : '收起 ▲';
 }
-
-// AI 聊天功能
-function openAIChat() {
-    const chatWindow = document.getElementById('aiChatWindow');
-    const floatingBtn = document.getElementById('aiFloatingBtn');
-    const searchInput = document.getElementById('aiSearchInput');
-    
-    // 如果有搜索框内容，带入聊天
-    const searchText = searchInput.value.trim();
-    if (searchText) {
-        document.getElementById('aiChatInput').value = searchText;
-        searchInput.value = '';
-    }
-    
-    chatWindow.classList.add('active');
-    floatingBtn.classList.add('hidden');
-    
-    // 聚焦输入框
-    setTimeout(() => {
-        document.getElementById('aiChatInput').focus();
-    }, 100);
-}
-
-function closeAIChat() {
-    const chatWindow = document.getElementById('aiChatWindow');
-    const floatingBtn = document.getElementById('aiFloatingBtn');
-    chatWindow.classList.remove('active');
-    floatingBtn.classList.remove('hidden');
-}
-
-function sendAIQuestion() {
-    const input = document.getElementById('aiChatInput');
-    const question = input.value.trim();
-    if (!question) return;
-    
-    addMessage(question, 'user');
-    input.value = '';
-    
-    // 模拟 AI 回复
-    setTimeout(() => {
-        const response = generateAIResponse(question);
-        addMessage(response, 'bot');
-    }, 800);
-}
-
-function sendQuickQuestion(question) {
-    addMessage(question, 'user');
-    setTimeout(() => {
-        const response = generateAIResponse(question);
-        addMessage(response, 'bot');
-    }, 800);
-}
-
-function addMessage(text, type) {
-    const messagesContainer = document.getElementById('aiChatMessages');
-    const messageDiv = document.createElement('div');
-    messageDiv.className = 'ai-message ' + type;
-    messageDiv.innerHTML = text;
-    messagesContainer.appendChild(messageDiv);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-}
-
-function generateAIResponse(question) {
-    const q = question.toLowerCase();
-    
-    // 今日成交
-    if (q.includes('今天') || q.includes('今日') || q.includes('成交') || q.includes('多少套')) {
-        return '根据最新数据，<strong>今天（3月11日）上海二手房成交 1,068 套</strong>，其中 300-500万区间占比约 30.3%。<br><br>这是一个<strong>🔥🔥🔥 高度活跃</strong>的交易日，高于近期平均水平。';
-    }
-    
-    // 300万推荐
-    if (q.includes('300万') || q.includes('300w') || q.includes('推荐') || q.includes('买哪里')) {
-        return '300万预算推荐关注以下区域：<br><br><strong>1. 松江泗泾 - 金地自在城</strong><br>• 89㎡ 三房，总价 310-340万<br>• 9号线直达徐家汇，通勤便利<br>• 小区品质好，绿化率高<br><br><strong>2. 闵行莘庄 - 上海康城</strong><br>• 90-100㎡ 两房，总价 268-305万<br>• 超大型社区，配套自给自足<br>• 社区巴士直达地铁站';
-    }
-    
-    // 价格走势
-    if (q.includes('走势') || q.includes('涨跌') || q.includes('价格') || q.includes('房价')) {
-        return '近期价格走势：<br><br><strong>成交均价：44,371 元/㎡</strong><br>趋势：➡️ 基本持平（较昨日 +6元）<br><br><strong>挂牌均价：57,934 元/㎡</strong><br>较上月略有下调，议价空间增大<br><br>💡 <strong>建议：</strong>当前市场处于底部震荡期，是刚需上车的好时机。';
-    }
-    
-    // 性价比
-    if (q.includes('性价比') || q.includes('最高') || q.includes('值得')) {
-        return '<strong>性价比最高推荐：上海康城</strong><br><br>• <strong>单价最低：</strong>30,500元/㎡<br>• <strong>总价区间：</strong>268-450万<br>• <strong>3月成交：</strong>45套（🔥🔥🔥🔥 最热门）<br>• <strong>优势：</strong>22000㎡人造海景、九年一贯制学校<br><br>其次是<strong>金地自在城</strong>，地铁房+品质开发商，适合通勤族。';
-    }
-    
-    // 小区详情
-    if (q.includes('金地') || q.includes('自在城')) {
-        return '<strong>金地自在城（二期）</strong><br><br>📍 松江·泗泾<br>💰 均价 35,208元/㎡<br>🏠 主力户型：89-120㎡ 2-3房<br>🚇 9号线泗泾站 800米<br>📊 3月成交：28套<br><br><strong>在售房源：</strong><br>• 94㎡ 三房 - 309万<br>• 96㎡ 三房 - 340万<br>• 92㎡ 三房 - 308万';
-    }
-    
-    if (q.includes('康城')) {
-        return '<strong>上海康城</strong><br><br>📍 闵行·莘庄<br>💰 均价 32,800元/㎡（最低）<br>🏠 主力户型：101-138㎡ 2-3房<br>🚇 12号线西延线（在建）<br>📊 3月成交：45套（最热门）<br><br><strong>核心优势：</strong><br>• 22000㎡人造海景、沙滩<br>• 康城实验学校（九年一贯制）<br>• 社区巴士直达莘庄站';
-    }
-    
-    if (q.includes('保利') || q.includes('西子湾')) {
-        return '<strong>保利西子湾</strong><br><br>📍 松江·大学城<br>💰 均价 47,600元/㎡<br>🏠 主力户型：89-140㎡ 2-4房<br>🚇 9号线松江大学城站 400米（正地铁房）<br>📊 3月成交：22套<br><br><strong>核心优势：</strong><br>• 央企保利开发，品质标杆<br>• 步行300米即达万达广场<br>• 大学城人文氛围浓厚';
-    }
-    
-    // 默认回复
-    return '感谢您的提问！<br><br>您可以问我：<br>• "今天成交多少套？"<br>• "300万推荐买哪里？"<br>• "最近房价走势如何？"<br>• "哪个小区性价比最高？"<br>• "金地自在城怎么样？"<br><br>我会根据最新数据为您解答。';
-}
-
-// ESC 键关闭聊天
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        closeAIChat();
-    }
-});
 </script>
 
 </body>
