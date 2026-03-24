@@ -459,6 +459,7 @@ td.volume { color: #00ff88; font-weight: 700; }
     </div>
     
     <!-- 主内容区 -->
+    
     <div class="tab-content">
         
         <!-- 日报 Tab -->
@@ -610,7 +611,172 @@ td.volume { color: #00ff88; font-weight: 700; }
     </div>
 
     <!-- 热门小区 -->
-    <div class="section community-section">
+    
+            <div class="container">
+                <!-- 核心指标卡片等内容已在 daily_part 中 -->
+            </div>
+            <div class="footer">
+                <p>上海房市追踪系统 · 300-500万区间专项</p>
+                <p>数据来源：网上房地产、中原地产、链家研究院</p>
+                <p>每日 9:30 自动更新 · 2026年03月20日</p>
+            </div>
+        </div>
+        
+        <!-- 资讯 Tab -->
+        <div class="tab-panel" id="tab-news">
+            <div class="header">
+                <h1>房市新闻资讯</h1>
+                <div class="date">2026年03月20日 周五</div>
+                <div class="badge">知名媒体实时收录</div>
+            </div>
+            <div class="container">
+                <div class="section news-section">
+    <h2>📰 房市新闻资讯</h2>
+    <p style="color:#88aabb; font-size:12px; margin-bottom:16px;">知名媒体实时收录 · 自动总结</p>
+    
+    <div class="news-summary">
+        <div class="news-summary-title">📊 今日要闻总结</div>
+        <div class="news-summary-content">📊 今日共收录 5 条房市相关新闻
+📑 分类：政策: 1条 | 市场: 2条 | 金融: 1条 | 交付: 1条
+🔥 重点新闻：3 条
+  • 上海进一步优化调整房地产政策
+  • 上海二手房成交量连续3个月破2万套
+  • 房贷利率下调预期升温
+💡 政策动态：今日有重要政策发布
+📈 市场动态：成交数据活跃</div>
+    </div>
+    
+    <div class="news-category-tabs">
+        <div class="news-tab active" onclick="filterNews('all')">全部</div>
+        <div class="news-tab" onclick="filterNews('政策')">政策</div>
+        <div class="news-tab" onclick="filterNews('市场')">市场</div>
+        <div class="news-tab" onclick="filterNews('金融')">金融</div>
+    </div>
+    
+    <div class="news-list">
+        <div class="news-item" data-category="政策">
+            <div class="news-item-header">
+                <div class="news-item-title">上海进一步优化调整房地产政策：外环内限购放松，公积金最高可贷324万</div>
+                <span class="news-item-importance">重点</span>
+            </div>
+            <div class="news-item-meta">
+                <span class="news-item-source">界面新闻</span>
+                <span class="news-item-category">政策</span>
+            </div>
+            <div class="news-item-summary">2月25日，上海五部门联合印发《关于进一步优化调整本市房地产政策的通知》，自2月26日起施行。主要内容包括：缩短非沪籍居民购买外环内住房社保年限至1年；公积金最高贷款额度从160万提高至240万。</div>
+            <div class="news-item-keywords">
+                <span class="news-keyword">限购</span>
+                <span class="news-keyword">公积金</span>
+            </div>
+        </div>
+        
+        <div class="news-item" data-category="市场">
+            <div class="news-item-header">
+                <div class="news-item-title">上海二手房成交量连续3个月破2万套，300-500万区间成主力</div>
+                <span class="news-item-importance">重点</span>
+            </div>
+            <div class="news-item-meta">
+                <span class="news-item-source">澎湃新闻</span>
+                <span class="news-item-category">市场</span>
+            </div>
+            <div class="news-item-summary">2026年1-3月，上海二手房市场持续活跃，连续3个月成交量突破2万套。其中300-500万总价区间占比超过30%，成为市场主力。</div>
+            <div class="news-item-keywords">
+                <span class="news-keyword">二手房</span>
+                <span class="news-keyword">成交量</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="news-history">
+        <div class="news-history-title">📅 近期收录</div>
+        <div class="news-history-item">
+            <span>2026-03-23</span>
+            <span style="color:#4488ff">5 条</span>
+        </div>
+    </div>
+</div>
+
+<!--新闻模块--><div class="section news-section"><h2>📰 房市新闻资讯</h2><p style="color:#88aabb;font-size:12px;margin-bottom:16px">知名媒体实时收录·自动总结</p><div class="news-summary"><div class="news-summary-title">📊 今日要闻总结</div><div class="news-summary-content">📊 今日共收录 5 条房市相关新闻
+📑 分类：政策:1条|市场:2条|金融:1条|交付:1条
+🔥 重点新闻：限购放松、成交破2万套、利率下调
+💡 政策动态：今日有重要政策发布
+📈 市场动态：成交数据活跃</div></div><div class="news-category-tabs"><div class="news-tab active" onclick="filterNews('all')">全部</div><div class="news-tab" onclick="filterNews('政策')">政策</div><div class="news-tab" onclick="filterNews('市场')">市场</div><div class="news-tab" onclick="filterNews('金融')">金融</div></div><div class="news-list"><div class="news-item" data-category="政策"><div class="news-item-header"><div class="news-item-title">上海进一步优化调整房地产政策：外环内限购放松，公积金最高可贷324万</div><span class="news-item-importance">重点</span></div><div class="news-item-meta"><span class="news-item-source">界面新闻</span><span class="news-item-category">政策</span></div><div class="news-item-summary">2月25日，上海五部门联合印发《关于进一步优化调整本市房地产政策的通知》，自2月26日起施行。主要内容包括：缩短非沪籍居民购买外环内住房社保年限至1年；公积金最高贷款额度从160万提高至240万。</div><div class="news-item-keywords"><span class="news-keyword">限购</span><span class="news-keyword">公积金</span></div></div><div class="news-item" data-category="市场"><div class="news-item-header"><div class="news-item-title">上海二手房成交量连续3个月破2万套，300-500万区间成主力</div><span class="news-item-importance">重点</span></div><div class="news-item-meta"><span class="news-item-source">澎湃新闻</span><span class="news-item-category">市场</span></div><div class="news-item-summary">2026年1-3月，上海二手房市场持续活跃，连续3个月成交量突破2万套。其中300-500万总价区间占比超过30%，成为市场主力。</div><div class="news-item-keywords"><span class="news-keyword">二手房</span><span class="news-keyword">成交量</span></div></div></div><div class="news-history"><div class="news-history-title">📅 近期收录</div><div class="news-history-item"><span>2026-03-23</span><span style="color:#4488ff">5 条</span></div></div></div>        </div>
+        <!-- /日报 Tab -->
+        
+        <!-- 资讯 Tab -->
+        <div class="tab-panel" id="tab-news">
+            <div class="header">
+                <h1>房市新闻资讯</h1>
+                <div class="date">2026年03月20日 周五</div>
+                <div class="badge">知名媒体实时收录</div>
+            </div>
+            <div class="container">
+                <!-- 新闻模块 -->
+                <div class="section news-section">
+                    <h2>📰 今日要闻</h2>
+                    <div class="news-summary">
+                        <div class="news-summary-title">📊 要闻总结</div>
+                        <div class="news-summary-content">📊 今日共收录 5 条房市相关新闻
+📑 分类：政策:1条|市场:2条|金融:1条|交付:1条
+🔥 重点：限购放松、成交破2万套、利率下调</div>
+                    </div>
+                    <div class="news-category-tabs">
+                        <div class="news-tab active" onclick="filterNews('all')">全部</div>
+                        <div class="news-tab" onclick="filterNews('政策')">政策</div>
+                        <div class="news-tab" onclick="filterNews('市场')">市场</div>
+                        <div class="news-tab" onclick="filterNews('金融')">金融</div>
+                    </div>
+                    <div class="news-list">
+                        <div class="news-item" data-category="政策">
+                            <div class="news-item-header">
+                                <div class="news-item-title">上海进一步优化调整房地产政策：外环内限购放松，公积金最高可贷324万</div>
+                                <span class="news-item-importance">重点</span>
+                            </div>
+                            <div class="news-item-meta">
+                                <span class="news-item-source">界面新闻</span>
+                                <span class="news-item-category">政策</span>
+                            </div>
+                            <div class="news-item-summary">2月25日，上海五部门联合印发《关于进一步优化调整本市房地产政策的通知》，自2月26日起施行。主要内容包括：缩短非沪籍居民购买外环内住房社保年限至1年；公积金最高贷款额度从160万提高至240万。</div>
+                            <div class="news-item-keywords"><span class="news-keyword">限购</span><span class="news-keyword">公积金</span></div>
+                        </div>
+                        <div class="news-item" data-category="市场">
+                            <div class="news-item-header">
+                                <div class="news-item-title">上海二手房成交量连续3个月破2万套，300-500万区间成主力</div>
+                                <span class="news-item-importance">重点</span>
+                            </div>
+                            <div class="news-item-meta">
+                                <span class="news-item-source">澎湃新闻</span>
+                                <span class="news-item-category">市场</span>
+                            </div>
+                            <div class="news-item-summary">2026年1-3月，上海二手房市场持续活跃，连续3个月成交量突破2万套。其中300-500万总价区间占比超过30%，成为市场主力。</div>
+                            <div class="news-item-keywords"><span class="news-keyword">二手房</span><span class="news-keyword">成交量</span></div>
+                        </div>
+                    </div>
+                    <div class="news-history">
+                        <div class="news-history-title">📅 近期收录</div>
+                        <div class="news-history-item"><span>2026-03-23</span><span style="color:#4488ff">5 条</span></div>
+                        <div class="news-history-item"><span>2026-03-22</span><span style="color:#4488ff">4 条</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+            <div class="footer">
+                <p>上海房市追踪系统 · 新闻资讯</p>
+                <p>数据来源：界面新闻、澎湃新闻、第一财经等</p>
+                <p>每日自动收录更新 · 2026年03月20日</p>
+            </div>
+        </div>
+        
+        <!-- 热门小区 Tab -->
+        <div class="tab-panel" id="tab-community">
+            <div class="header">
+                <h1>热门小区推荐</h1>
+                <div class="date">2026年03月20日 周五</div>
+                <div class="badge">300-500万区间 · 成交活跃</div>
+            </div>
+            <div class="container">
+                <div class="section community-section">
         <h2>🏘️ 热门小区推荐</h2>
         <p style="color:#88aabb; font-size:12px; margin-bottom:16px;">300-500万区间 · 3月成交活跃小区</p>
         <div class="community-grid">
@@ -678,7 +844,24 @@ td.volume { color: #00ff88; font-weight: 700; }
     </div>
 
     <!-- 挂牌价变动模块 -->
-    <div class="section listing-section">
+    
+            </div>
+            <div class="footer">
+                <p>上海房市追踪系统 · 热门小区</p>
+                <p>数据来源：贝壳找房、链家、中原地产</p>
+                <p>每日更新 · 2026年03月20日</p>
+            </div>
+        </div>
+        
+        <!-- 挂牌房源 Tab -->
+        <div class="tab-panel" id="tab-listings">
+            <div class="header">
+                <h1>挂牌房源 & 价格变动</h1>
+                <div class="date">2026年03月20日 周五</div>
+                <div class="badge">实时挂牌数据</div>
+            </div>
+            <div class="container">
+                <div class="section listing-section">
         <h2>📈 热门小区挂牌房源 & 价格变动</h2>
         <p style="color:#88aabb; font-size:12px; margin-bottom:16px;">贝壳找房实时数据 · 300-500万区间</p>
 
@@ -908,224 +1091,19 @@ td.volume { color: #00ff88; font-weight: 700; }
 
 
 <!-- 新闻资讯模块 -->
-<div class="section news-section">
-    <h2>📰 房市新闻资讯</h2>
-    <p style="color:#88aabb; font-size:12px; margin-bottom:16px;">知名媒体实时收录 · 自动总结</p>
-    
-    <div class="news-summary">
-        <div class="news-summary-title">📊 今日要闻总结</div>
-        <div class="news-summary-content">📊 今日共收录 5 条房市相关新闻
-📑 分类：政策: 1条 | 市场: 2条 | 金融: 1条 | 交付: 1条
-🔥 重点新闻：3 条
-  • 上海进一步优化调整房地产政策
-  • 上海二手房成交量连续3个月破2万套
-  • 房贷利率下调预期升温
-💡 政策动态：今日有重要政策发布
-📈 市场动态：成交数据活跃</div>
-    </div>
-    
-    <div class="news-category-tabs">
-        <div class="news-tab active" onclick="filterNews('all')">全部</div>
-        <div class="news-tab" onclick="filterNews('政策')">政策</div>
-        <div class="news-tab" onclick="filterNews('市场')">市场</div>
-        <div class="news-tab" onclick="filterNews('金融')">金融</div>
-    </div>
-    
-    <div class="news-list">
-        <div class="news-item" data-category="政策">
-            <div class="news-item-header">
-                <div class="news-item-title">上海进一步优化调整房地产政策：外环内限购放松，公积金最高可贷324万</div>
-                <span class="news-item-importance">重点</span>
-            </div>
-            <div class="news-item-meta">
-                <span class="news-item-source">界面新闻</span>
-                <span class="news-item-category">政策</span>
-            </div>
-            <div class="news-item-summary">2月25日，上海五部门联合印发《关于进一步优化调整本市房地产政策的通知》，自2月26日起施行。主要内容包括：缩短非沪籍居民购买外环内住房社保年限至1年；公积金最高贷款额度从160万提高至240万。</div>
-            <div class="news-item-keywords">
-                <span class="news-keyword">限购</span>
-                <span class="news-keyword">公积金</span>
-            </div>
-        </div>
-        
-        <div class="news-item" data-category="市场">
-            <div class="news-item-header">
-                <div class="news-item-title">上海二手房成交量连续3个月破2万套，300-500万区间成主力</div>
-                <span class="news-item-importance">重点</span>
-            </div>
-            <div class="news-item-meta">
-                <span class="news-item-source">澎湃新闻</span>
-                <span class="news-item-category">市场</span>
-            </div>
-            <div class="news-item-summary">2026年1-3月，上海二手房市场持续活跃，连续3个月成交量突破2万套。其中300-500万总价区间占比超过30%，成为市场主力。</div>
-            <div class="news-item-keywords">
-                <span class="news-keyword">二手房</span>
-                <span class="news-keyword">成交量</span>
-            </div>
-        </div>
-    </div>
-    
-    <div class="news-history">
-        <div class="news-history-title">📅 近期收录</div>
-        <div class="news-history-item">
-            <span>2026-03-23</span>
-            <span style="color:#4488ff">5 条</span>
-        </div>
-    </div>
-</div>
 
-<!--新闻模块--><div class="section news-section"><h2>📰 房市新闻资讯</h2><p style="color:#88aabb;font-size:12px;margin-bottom:16px">知名媒体实时收录·自动总结</p><div class="news-summary"><div class="news-summary-title">📊 今日要闻总结</div><div class="news-summary-content">📊 今日共收录 5 条房市相关新闻
-📑 分类：政策:1条|市场:2条|金融:1条|交付:1条
-🔥 重点新闻：限购放松、成交破2万套、利率下调
-💡 政策动态：今日有重要政策发布
-📈 市场动态：成交数据活跃</div></div><div class="news-category-tabs"><div class="news-tab active" onclick="filterNews('all')">全部</div><div class="news-tab" onclick="filterNews('政策')">政策</div><div class="news-tab" onclick="filterNews('市场')">市场</div><div class="news-tab" onclick="filterNews('金融')">金融</div></div><div class="news-list"><div class="news-item" data-category="政策"><div class="news-item-header"><div class="news-item-title">上海进一步优化调整房地产政策：外环内限购放松，公积金最高可贷324万</div><span class="news-item-importance">重点</span></div><div class="news-item-meta"><span class="news-item-source">界面新闻</span><span class="news-item-category">政策</span></div><div class="news-item-summary">2月25日，上海五部门联合印发《关于进一步优化调整本市房地产政策的通知》，自2月26日起施行。主要内容包括：缩短非沪籍居民购买外环内住房社保年限至1年；公积金最高贷款额度从160万提高至240万。</div><div class="news-item-keywords"><span class="news-keyword">限购</span><span class="news-keyword">公积金</span></div></div><div class="news-item" data-category="市场"><div class="news-item-header"><div class="news-item-title">上海二手房成交量连续3个月破2万套，300-500万区间成主力</div><span class="news-item-importance">重点</span></div><div class="news-item-meta"><span class="news-item-source">澎湃新闻</span><span class="news-item-category">市场</span></div><div class="news-item-summary">2026年1-3月，上海二手房市场持续活跃，连续3个月成交量突破2万套。其中300-500万总价区间占比超过30%，成为市场主力。</div><div class="news-item-keywords"><span class="news-keyword">二手房</span><span class="news-keyword">成交量</span></div></div></div><div class="news-history"><div class="news-history-title">📅 近期收录</div><div class="news-history-item"><span>2026-03-23</span><span style="color:#4488ff">5 条</span></div></div></div>        </div>
-        <!-- /日报 Tab -->
-        
-        <!-- 资讯 Tab -->
-        <div class="tab-panel" id="tab-news">
-            <div class="header">
-                <h1>房市新闻资讯</h1>
-                <div class="date">2026年03月20日 周五</div>
-                <div class="badge">知名媒体实时收录</div>
-            </div>
-            <div class="container">
-                <!-- 新闻模块 -->
-                <div class="section news-section">
-                    <h2>📰 今日要闻</h2>
-                    <div class="news-summary">
-                        <div class="news-summary-title">📊 要闻总结</div>
-                        <div class="news-summary-content">📊 今日共收录 5 条房市相关新闻
-📑 分类：政策:1条|市场:2条|金融:1条|交付:1条
-🔥 重点：限购放松、成交破2万套、利率下调</div>
-                    </div>
-                    <div class="news-category-tabs">
-                        <div class="news-tab active" onclick="filterNews('all')">全部</div>
-                        <div class="news-tab" onclick="filterNews('政策')">政策</div>
-                        <div class="news-tab" onclick="filterNews('市场')">市场</div>
-                        <div class="news-tab" onclick="filterNews('金融')">金融</div>
-                    </div>
-                    <div class="news-list">
-                        <div class="news-item" data-category="政策">
-                            <div class="news-item-header">
-                                <div class="news-item-title">上海进一步优化调整房地产政策：外环内限购放松，公积金最高可贷324万</div>
-                                <span class="news-item-importance">重点</span>
-                            </div>
-                            <div class="news-item-meta">
-                                <span class="news-item-source">界面新闻</span>
-                                <span class="news-item-category">政策</span>
-                            </div>
-                            <div class="news-item-summary">2月25日，上海五部门联合印发《关于进一步优化调整本市房地产政策的通知》，自2月26日起施行。主要内容包括：缩短非沪籍居民购买外环内住房社保年限至1年；公积金最高贷款额度从160万提高至240万。</div>
-                            <div class="news-item-keywords"><span class="news-keyword">限购</span><span class="news-keyword">公积金</span></div>
-                        </div>
-                        <div class="news-item" data-category="市场">
-                            <div class="news-item-header">
-                                <div class="news-item-title">上海二手房成交量连续3个月破2万套，300-500万区间成主力</div>
-                                <span class="news-item-importance">重点</span>
-                            </div>
-                            <div class="news-item-meta">
-                                <span class="news-item-source">澎湃新闻</span>
-                                <span class="news-item-category">市场</span>
-                            </div>
-                            <div class="news-item-summary">2026年1-3月，上海二手房市场持续活跃，连续3个月成交量突破2万套。其中300-500万总价区间占比超过30%，成为市场主力。</div>
-                            <div class="news-item-keywords"><span class="news-keyword">二手房</span><span class="news-keyword">成交量</span></div>
-                        </div>
-                    </div>
-                    <div class="news-history">
-                        <div class="news-history-title">📅 近期收录</div>
-                        <div class="news-history-item"><span>2026-03-23</span><span style="color:#4488ff">5 条</span></div>
-                        <div class="news-history-item"><span>2026-03-22</span><span style="color:#4488ff">4 条</span></div>
-                    </div>
-                </div>
             </div>
             <div class="footer">
-                <p>上海房市追踪系统 · 新闻资讯</p>
-                <p>数据来源：界面新闻、澎湃新闻、第一财经等</p>
-                <p>每日自动收录更新 · 2026年03月20日</p>
+                <p>上海房市追踪系统 · 挂牌房源</p>
+                <p>数据来源：贝壳找房、链家</p>
+                <p>实时更新 · 2026年03月20日</p>
             </div>
         </div>
-        <!-- /资讯 Tab -->
         
-        <!-- 热门小区 Tab -->
-        <div class="tab-panel" id="tab-community">
-            <div class="header">
-                <h1>热门小区推荐</h1>
-                <div class="date">2026年03月20日 周五</div>
-                <div class="badge">300-500万区间 · 成交活跃</div>
-            </div>
-            <div class="container">
-                <div class="section community-section">
-                    <h2>🏘️ 精选小区</h2>
-<div class="footer">
-    <p>上海房市追踪系统 · 300-500万区间专项</p>
-    <p>数据来源：网上房地产、中原地产、链家研究院</p>
-    <p>每日 9:30 自动更新 · 2026年03月20日</p>
+    </div>
 </div>
 
-<script>
-function previewImage(el) {
-    var img = el.querySelector('img');
-    var label = el.querySelector('.img-label');
-    var overlay = document.getElementById('imagePreview');
-    var previewImg = document.getElementById('previewImg');
-    var caption = document.getElementById('previewCaption');
-    previewImg.src = img.src;
-    caption.textContent = (el.closest('.community-card').querySelector('h3').textContent || '') + ' - ' + (label ? label.textContent : '');
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-function closePreview() {
-    document.getElementById('imagePreview').classList.remove('active');
-    document.body.style.overflow = '';
-}
-document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePreview(); });
-
-function toggleListings(id) {
-    var el = document.getElementById(id);
-    var icon = document.getElementById(id + '-icon');
-    if (el.style.display === 'none') {
-        el.style.display = 'block';
-        if (icon) icon.textContent = '▲';
-    } else {
-        el.style.display = 'none';
-        if (icon) icon.textContent = '▼';
-    }
-}
-
-function toggleMore(btn, community) {
-    var parent = btn.parentElement;
-    var hiddenItems = parent.querySelectorAll('.hidden-listing');
-    var isExpanded = btn.getAttribute('data-expanded') === 'true';
-    hiddenItems.forEach(function(item) {
-        item.style.display = isExpanded ? 'none' : 'flex';
-    });
-    btn.setAttribute('data-expanded', isExpanded ? 'false' : 'true');
-    btn.textContent = isExpanded ? '展开更多房源 ▼' : '收起 ▲';
-}
-
-// 新闻模块功能
-function filterNews(category) {
-    var tabs = document.querySelectorAll('.news-tab');
-    var items = document.querySelectorAll('.news-item');
-    tabs.forEach(function(tab) {
-        tab.classList.remove('active');
-        if (tab.textContent.includes(category) || (category === 'all' && tab.textContent === '全部')) {
-            tab.classList.add('active');
-        }
-    });
-    items.forEach(function(item) {
-        if (category === 'all' || item.getAttribute('data-category') === category) {
-            item.style.display = 'block';
-        } else {
-            item.style.display = 'none';
-        }
-    });
-}
-
-function filterNews(category){var tabs=document.querySelectorAll(".news-tab");var items=document.querySelectorAll(".news-item");tabs.forEach(function(tab){tab.classList.remove("active");if(tab.textContent.includes(category)||(category==="all"&&tab.textContent==="全部")){tab.classList.add("active")}});items.forEach(function(item){if(category==="all"||item.getAttribute("data-category")===category){item.style.display="block"}else{item.style.display="none"}})}
-</script>
 
 
-</html>function filterNews(c){var t=document.querySelectorAll(".news-tab");var i=document.querySelectorAll(".news-item");t.forEach(function(x){x.classList.remove("active");if(x.textContent.includes(c)||(c==="all"&&x.textContent==="全部")){x.classList.add("active")}});i.forEach(function(x){if(c==="all"||x.getAttribute("data-category")===c){x.style.display="block"}else{x.style.display="none"}})}
-</script>    </div>
-</div>
-</body></html>
+</body>
+</html>
